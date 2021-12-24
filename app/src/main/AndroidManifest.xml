@@ -18,7 +18,7 @@
             android:name=".Activity.TransactionActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.AccountActivity"
+            android:name=".Activity.UserActivity"
             android:exported="true" />
         <activity
             android:name=".Activity.MainActivity"

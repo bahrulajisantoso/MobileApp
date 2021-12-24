@@ -15,7 +15,7 @@ import com.example.mobileapp.Session.SessionManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class AccountActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
 
     TextView tvNama, tvEmail, tvNik, tvNoHp, tvTglLahir, tvJenisKel, tvAlamat;
     Button btnLogout;
@@ -25,10 +25,10 @@ public class AccountActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account);
+        setContentView(R.layout.activity_user);
 
         // session
-        SessionManager sessionManager = new SessionManager(AccountActivity.this);
+        SessionManager sessionManager = new SessionManager(UserActivity.this);
         if (sessionManager.isLoggedin() == false) {
             moveToLogin();
         }
@@ -98,7 +98,7 @@ public class AccountActivity extends AppCompatActivity {
     }
 
     private void moveToLogin() {
-        Intent intent = new Intent(AccountActivity.this, LoginActivity.class);
+        Intent intent = new Intent(UserActivity.this, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent);
         finish();

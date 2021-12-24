@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         break;
                     case R.id.nav_account:
-                        startActivity(new Intent(getApplicationContext(), AccountActivity.class));
+                        startActivity(new Intent(getApplicationContext(), UserActivity.class));
                         overridePendingTransition(0, 0);
                         break;
                 }
