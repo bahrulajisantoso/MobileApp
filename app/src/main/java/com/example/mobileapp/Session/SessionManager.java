@@ -14,7 +14,7 @@ public class SessionManager {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
-    private static final String IS_LOGGED_IN = "isLoggedIn";
+    private static final String IS_LOGIN = "isLoggedIn";
     private static final String NAMA = "nama";
     private static final String NIK = "nik";
     private static final String EMAIL = "email";
@@ -30,7 +30,7 @@ public class SessionManager {
     }
 
     public void createLoginSession(DataLogin dataLogin) {
-        editor.putBoolean(IS_LOGGED_IN, true);
+        editor.putBoolean(IS_LOGIN, true);
         editor.putString(NAMA, dataLogin.getNamaUser());
         editor.putString(NIK, dataLogin.getNik());
         editor.putString(EMAIL, dataLogin.getEmail());
@@ -58,12 +58,8 @@ public class SessionManager {
         editor.commit();
     }
 
-    public boolean isLoggedin() {
-        return sharedPreferences.getBoolean(IS_LOGGED_IN, false);
-    }
-
-    public static String getIsLoggedIn() {
-        return IS_LOGGED_IN;
+    public boolean isLogin() {
+        return sharedPreferences.getBoolean(IS_LOGIN, false);
     }
 
     public static String getNAMA() {

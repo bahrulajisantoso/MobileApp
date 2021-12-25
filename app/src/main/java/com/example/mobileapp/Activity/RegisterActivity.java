@@ -37,9 +37,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         etEmail = findViewById(R.id.etEmail);
         etNoHp = findViewById(R.id.etNoHp);
 //        etNik = findViewById(R.id.etNik);
-//        etJeniKel = findViewById(R.id.etJenisKel);
-//        etTglLahir = findViewById(R.id.etTglLahir);
-//        etAlamat = findViewById(R.id.etAlamat);
+        etJeniKel = findViewById(R.id.etJenisKel);
+        etTglLahir = findViewById(R.id.etTglLahir);
+        etAlamat = findViewById(R.id.etAlamat);
         etPassword = findViewById(R.id.etPassword);
         etKonfirmPassword = findViewById(R.id.etKonfirmPassword);
 
@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 nama = etNama.getText().toString();
                 email = etEmail.getText().toString();
                 noHp = etNoHp.getText().toString();
-                nik = etNik.getText().toString();
+//                nik = etNik.getText().toString();
                 jenisKelamin = etJeniKel.getText().toString();
                 tglLahir = etTglLahir.getText().toString();
                 alamat = etAlamat.getText().toString();
@@ -72,8 +72,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     etEmail.setError("Email harus diisi");
                 } else if (noHp.trim().equals("")) {
                     etNoHp.setError("No handphone harus diisi");
-                } else if (nik.trim().equals("")) {
-                    etNik.setError("NIK harus diisi");
+//                } else if (nik.trim().equals("")) {
+//                    etNik.setError("NIK harus diisi");
                 } else if (jenisKelamin.trim().equals("")) {
                     etJeniKel.setError("Jenis kelamin harus diisi");
                 } else if (tglLahir.trim().equals("")) {

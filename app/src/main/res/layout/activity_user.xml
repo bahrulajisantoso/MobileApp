@@ -17,14 +17,23 @@
     <!--        android:layout_height="match_parent"-->
     <!--        tools:listitem="@layout/data_item_user" />-->
 
+    <ImageView
+        android:id="@+id/ivUser"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_user" />
+
     <LinearLayout
         android:id="@+id/detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ivUser"
         android:layout_margin="20dp"
         android:orientation="horizontal"
         android:paddingRight="4dp">
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -37,14 +46,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Nama"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="NIK"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -101,7 +102,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text=":"
-
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -110,7 +110,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text=":"
-
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -119,16 +118,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text=":"
-
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text=":"
-
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -138,7 +127,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text=":"
-
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -147,7 +135,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text=":"
-
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -172,32 +159,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Nama"
-
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/tvNik"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="NIK"
-
                 android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/tvEmail"
                 android:layout_width="match_parent"
-
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Email"
-
                 android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/tvNoHp"
                 android:layout_width="match_parent"
-
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="No HP"
@@ -207,7 +181,6 @@
             <TextView
                 android:id="@+id/tvTglLahir"
                 android:layout_width="match_parent"
-
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Tanggal Lahir"
@@ -216,7 +189,6 @@
             <TextView
                 android:id="@+id/tvJenisKel"
                 android:layout_width="match_parent"
-
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Jenis kelamin"
@@ -240,7 +212,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:text="Keluar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

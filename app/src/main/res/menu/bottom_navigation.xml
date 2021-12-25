@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/nav_account"
-        android:icon="@drawable/ic_account"
+        android:icon="@drawable/ic_user"
         android:title="Akun" />
 
 </menu>

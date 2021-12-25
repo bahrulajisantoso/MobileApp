@@ -1,14 +1,17 @@
 package com.example.mobileapp.Activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mobileapp.R;
 import com.example.mobileapp.Session.SessionManager;
@@ -29,7 +32,7 @@ public class UserActivity extends AppCompatActivity {
 
         // session
         SessionManager sessionManager = new SessionManager(UserActivity.this);
-        if (sessionManager.isLoggedin() == false) {
+        if (sessionManager.isLogin() == false) {
             moveToLogin();
         }
 
@@ -46,7 +49,7 @@ public class UserActivity extends AppCompatActivity {
 
         nama = sessionManager.getUserData().get(SessionManager.getNAMA());
         email = sessionManager.getUserData().get(SessionManager.getEMAIL());
-        nik = sessionManager.getUserData().get(SessionManager.getNIK());
+//        nik = sessionManager.getUserData().get(SessionManager.getNIK());
         noHp = sessionManager.getUserData().get(SessionManager.getNoHp());
         tglLahir = sessionManager.getUserData().get(SessionManager.getTanggalLahir());
         jenisKel = sessionManager.getUserData().get(SessionManager.getJenisKelamin());
@@ -54,7 +57,7 @@ public class UserActivity extends AppCompatActivity {
 
         tvNama.setText(nama);
         tvEmail.setText(email);
-        tvNik.setText(nik);
+//        tvNik.setText(nik);
         tvNoHp.setText(noHp);
         tvTglLahir.setText(tglLahir);
         tvJenisKel.setText(jenisKel);
@@ -65,9 +68,30 @@ public class UserActivity extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sessionManager.logoutSession();
-                moveToLogin();
-                finish();
+//                sessionManager.logoutSession();
+//                moveToLogin();
+//                finish();
+
+                new AlertDialog.Builder(UserActivity.this)
+                        .setTitle("Apakah anda ingin keluar?")
+                        .setMessage("Ingin keluar dari aplikasi ini?")
+                        .setPositiveButton("TIDAK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Toast.makeText(getActivity(), "Kamu Memilih YES", Toast.LENGTH_LONG).show();
+                                dialog.cancel();
+                            }
+                        })
+                        .setNegativeButton("YA", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+//                                Toast.makeText(UserActivity.this, "Kamu Memilih TIDAK Ingin Keluar", Toast.LENGTH_LONG).show();
+                                dialog.cancel();
+                                sessionManager.logoutSession();
+                                moveToLogin();
+                                finish();
+                            }
+                        }).show();
             }
         });
 

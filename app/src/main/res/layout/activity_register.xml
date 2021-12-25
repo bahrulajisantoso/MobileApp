@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +10,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:orientation="vertical">
 
         <TextView
@@ -28,16 +27,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
             android:hint="Nama">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/ic_account"
-                android:drawableRight="@drawable/ic_account"
-                android:fontFamily="@font/poppinsmedium" />
+                android:drawableEnd="@drawable/ic_user"
+                android:drawableRight="@drawable/ic_user"
+                android:fontFamily="@font/poppinsmedium"
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -46,7 +45,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
             android:hint="Email">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -55,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_email"
                 android:drawableRight="@drawable/ic_email"
-                android:fontFamily="@font/poppinsmedium" />
+                android:fontFamily="@font/poppinsmedium"
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -63,7 +62,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
             android:hint="No Handphone">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -71,69 +69,72 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_phone"
-                android:fontFamily="@font/poppinsmedium" />
+                android:fontFamily="@font/poppinsmedium"
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--        <com.google.android.material.textfield.TextInputLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginLeft="30dp"-->
-        <!--            android:layout_marginRight="30dp"-->
-        <!--            android:hint="NIK">-->
+        <!--                <com.google.android.material.textfield.TextInputLayout-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginLeft="30dp"-->
+        <!--                    android:layout_marginRight="30dp"-->
+        <!--                    android:hint="NIK">-->
 
-        <!--            <com.google.android.material.textfield.TextInputEditText-->
-        <!--                android:id="@+id/etNik"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:drawableRight="@drawable/ic_nik"-->
-        <!--                android:fontFamily="@font/poppinsmedium" />-->
-        <!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <!--                    <com.google.android.material.textfield.TextInputEditText-->
+        <!--                        android:id="@+id/etNik"-->
+        <!--                        android:layout_width="match_parent"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:drawableRight="@drawable/ic_nik"-->
+        <!--                        android:fontFamily="@font/poppinsmedium" />-->
+        <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
-        <!--        <com.google.android.material.textfield.TextInputLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginLeft="30dp"-->
-        <!--            android:layout_marginRight="30dp"-->
-        <!--            android:hint="Jenis Kelamin">-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint="Jenis Kelamin">
 
-        <!--            <com.google.android.material.textfield.TextInputEditText-->
-        <!--                android:id="@+id/etJenisKel"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:drawableRight="@drawable/ic_gender"-->
-        <!--                android:fontFamily="@font/poppinsmedium" />-->
-        <!--        </com.google.android.material.textfield.TextInputLayout>-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etJenisKel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_gender"
+                android:fontFamily="@font/poppinsmedium"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <!--        <com.google.android.material.textfield.TextInputLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginLeft="30dp"-->
-        <!--            android:layout_marginRight="30dp"-->
-        <!--            android:hint="Tanggal Lahir">-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint="Tanggal Lahir">
 
-        <!--            <com.google.android.material.textfield.TextInputEditText-->
-        <!--                android:id="@+id/etTglLahir"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:drawableRight="@drawable/ic_calendar"-->
-        <!--                android:fontFamily="@font/poppinsmedium" />-->
-        <!--        </com.google.android.material.textfield.TextInputLayout>-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTglLahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_calendar"
+                android:fontFamily="@font/poppinsmedium"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <!--        <com.google.android.material.textfield.TextInputLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginLeft="30dp"-->
-        <!--            android:layout_marginRight="30dp"-->
-        <!--            android:hint="Alamat">-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint="Alamat">
 
-        <!--            <com.google.android.material.textfield.TextInputEditText-->
-        <!--                android:id="@+id/etAlamat"-->
-
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:drawableRight="@drawable/ic_home"-->
-        <!--                android:fontFamily="@font/poppinsmedium" />-->
-        <!--        </com.google.android.material.textfield.TextInputLayout>-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_home"
+                android:fontFamily="@font/poppinsmedium"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPassword"
@@ -147,10 +148,10 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:drawableEnd="@drawable/ic_pass"
                 android:drawableRight="@drawable/ic_pass"
-                android:fontFamily="@font/poppinsmedium" />
+                android:fontFamily="@font/poppinsmedium"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -167,7 +168,8 @@
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_pass"
                 android:drawableRight="@drawable/ic_pass"
-                android:fontFamily="@font/poppinsmedium" />
+                android:fontFamily="@font/poppinsmedium"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--        <ProgressBar-->
@@ -214,4 +216,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
