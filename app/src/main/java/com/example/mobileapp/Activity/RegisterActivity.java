@@ -1,10 +1,13 @@
 package com.example.mobileapp.Activity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +19,8 @@ import com.example.mobileapp.API.RetroServer;
 import com.example.mobileapp.Model.ResponseRegister;
 import com.example.mobileapp.R;
 
+import java.util.Calendar;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -24,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     EditText etNama, etEmail, etNoHp, etNik, etJeniKel, etTglLahir, etAlamat, etPassword, etKonfirmPassword;
     Button btnRegister;
-    TextView tvLogin;
+    TextView tvLogin, tvPilihTglLahir;
     String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword;
 
     @Override
@@ -33,12 +38,62 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
 
         // bind
+        tvPilihTglLahir = (TextView) findViewById(R.id.tvPilihTglLahir);
+        etTglLahir = (EditText) findViewById(R.id.etTglLahir);
+
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        int year = calendar.get(Calendar.YEAR);
+
+        tvPilihTglLahir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        RegisterActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        month = month + 1;
+                        String date = day + "/" + month + "/" + year;
+                        etTglLahir.setText(date);
+                    }
+                }, year, month, day
+                );
+                datePickerDialog.show();
+            }
+        });
+//        onDateSetListener = new DatePickerDialog.OnDateSetListener() {
+//            @Override
+//            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+//                month = month + 1;
+//                String date = day + "/" + month + "/" + year;
+//                etTglLahir.setText(date);
+//            }
+//        };
+
+//
+//        etTglLahir.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                DatePickerDialog datePickerDialog = new DatePickerDialog(
+//                        RegisterActivity.this, new DatePickerDialog.OnDateSetListener() {
+//                    @Override
+//                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+//                        String date = day + "/" + month + "/" + year;
+//                        etTglLahir.setText(date);
+//                    }
+//                }, year, month, day
+//                );
+//                datePickerDialog.show();
+//            }
+//        });
+
         etNama = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);
         etNoHp = findViewById(R.id.etNoHp);
 //        etNik = findViewById(R.id.etNik);
         etJeniKel = findViewById(R.id.etJenisKel);
-        etTglLahir = findViewById(R.id.etTglLahir);
+//        etTglLahir = findViewById(R.id.tvTglLahir);
         etAlamat = findViewById(R.id.etAlamat);
         etPassword = findViewById(R.id.etPassword);
         etKonfirmPassword = findViewById(R.id.etKonfirmPassword);

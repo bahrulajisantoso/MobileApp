@@ -10,6 +10,7 @@
     <color name="grey">#DCDCDC</color>
     <color name="primary">#004AAD</color>
     <color name="red">#FF0000</color>
+    <color name="dark_grey">#757575</color>
 
     // color button
     <color name="colorPrimary">#008577</color>

@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseWisata> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Gagal menghubungi sever" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Gagal menghubungi sever " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

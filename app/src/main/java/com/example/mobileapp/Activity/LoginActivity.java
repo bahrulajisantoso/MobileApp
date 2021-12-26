@@ -57,9 +57,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 password = etPassword.getText().toString();
 
                 if (email.trim().equals("")) {
-                    etEmail.setError("Email kosong");
+                    etEmail.setError("Email harus diisi");
                 } else if (password.trim().equals("")) {
-                    etPassword.setError("Password Kosong");
+                    etPassword.setError("Password harus diisi");
                 } else {
                     login();
                 }
