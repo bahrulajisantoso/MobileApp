@@ -10,8 +10,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mobileapp.API.ApiRequestData;
-import com.example.mobileapp.API.RetroServer;
+import com.example.mobileapp.API.ApiInterface;
+import com.example.mobileapp.API.RetrofitClient;
 import com.example.mobileapp.Model.DataLogin;
 import com.example.mobileapp.Model.ResponseLogin;
 import com.example.mobileapp.R;
@@ -75,8 +75,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // fungsi login
     private void login() {
 
-        ApiRequestData apiRequestData = RetroServer.getClient().create(ApiRequestData.class);
-        Call<ResponseLogin> responseLoginCall = apiRequestData.ardLogin(email, password);
+        ApiInterface apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
+        Call<ResponseLogin> responseLoginCall = apiInterface.getLogin(email, password);
         responseLoginCall.enqueue(new Callback<ResponseLogin>() {
             @Override
             public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {

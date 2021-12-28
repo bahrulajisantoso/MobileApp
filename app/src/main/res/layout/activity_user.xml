@@ -207,7 +207,7 @@
 
     <Button
         android:id="@+id/btnLogout"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/btn_keluar"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail"

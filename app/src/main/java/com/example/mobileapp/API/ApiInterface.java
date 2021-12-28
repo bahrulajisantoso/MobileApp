@@ -11,26 +11,26 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
-public interface ApiRequestData {
+public interface ApiInterface {
 
     // tampil wisata
-    @GET("read.php")
-    Call<ResponseWisata> ardReadData();
+    @GET("wisata.php")
+    Call<ResponseWisata> getWisata();
 
     // tampil user
     @GET("user.php")
-    Call<ResponseUser> ardUserData();
+    Call<ResponseUser> getUser();
 
     @FormUrlEncoded
     @POST("login.php")
-    Call<ResponseLogin> ardLogin(
+    Call<ResponseLogin> getLogin(
             @Field("email") String email,
             @Field("password") String password
     );
 
     @FormUrlEncoded
     @POST("register.php")
-    Call<ResponseRegister> ardRegister(
+    Call<ResponseRegister> addUser(
             @Field("nama_user") String nama,
             @Field("email") String email,
             @Field("no_hp") String noHp,
@@ -38,6 +38,7 @@ public interface ApiRequestData {
             @Field("jenis_kelamin") String jenisKelamin,
             @Field("tgl_lahir") String tglLahir,
             @Field("alamat") String alamat,
-            @Field("password") String password
+            @Field("password") String password,
+            @Field("konfirm_password") String konfirmPassword
     );
 }

@@ -7,15 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mobileapp.API.ApiRequestData;
-import com.example.mobileapp.API.RetroServer;
+import com.example.mobileapp.API.ApiInterface;
+import com.example.mobileapp.API.RetrofitClient;
 import com.example.mobileapp.Model.ResponseRegister;
 import com.example.mobileapp.R;
 
@@ -28,8 +27,8 @@ import retrofit2.Response;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText etNama, etEmail, etNoHp, etNik, etJeniKel, etTglLahir, etAlamat, etPassword, etKonfirmPassword;
-    Button btnRegister;
-    TextView tvLogin, tvPilihTglLahir;
+    Button btnRegister, btnPilihTglLahir;
+    TextView tvLogin;
     String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword;
 
     @Override
@@ -38,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
 
         // bind
-        tvPilihTglLahir = (TextView) findViewById(R.id.tvPilihTglLahir);
+        btnPilihTglLahir = (Button) findViewById(R.id.btnPilihTglLahir);
         etTglLahir = (EditText) findViewById(R.id.etTglLahir);
 
         Calendar calendar = Calendar.getInstance();
@@ -46,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         int month = calendar.get(Calendar.MONTH);
         int year = calendar.get(Calendar.YEAR);
 
-        tvPilihTglLahir.setOnClickListener(new View.OnClickListener() {
+        btnPilihTglLahir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -139,8 +138,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     etPassword.setError("Password harus diisi");
                 } else if (konfirmPassword.trim().equals("")) {
                     etKonfirmPassword.setError("konfirmasi password harus diisi");
-                } else if (!konfirmPassword.trim().equals(password)) {
-                    etKonfirmPassword.setError("Konfirmasi password tidak sesuai");
+//                } else if (!konfirmPassword.trim().equals(password)) {
+//                    etKonfirmPassword.setError("Konfirmasi password tidak sesuai");
                 } else {
                     register(nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword);
                 }
@@ -157,8 +156,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     // fungsi register
     private void register(String nama, String email, String noHp, String nik, String jenisKelamin, String tglLahir, String alamat, String password, String konfirmPassword) {
 
-        ApiRequestData apiRequestData = RetroServer.getClient().create(ApiRequestData.class);
-        Call<ResponseRegister> responseRegisterCall = apiRequestData.ardRegister(nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password);
+        ApiInterface apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
+        Call<ResponseRegister> responseRegisterCall = apiInterface.addUser(nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword);
         responseRegisterCall.enqueue(new Callback<ResponseRegister>() {
             @Override
             public void onResponse(Call<ResponseRegister> call, Response<ResponseRegister> response) {

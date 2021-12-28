@@ -15,8 +15,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/poppinsbold"
             android:gravity="center"
             android:text="Daftar"
@@ -125,7 +125,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etTglLahir"
-                    android:layout_width="200dp"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
                     android:drawableRight="@drawable/ic_calendar"
@@ -134,16 +134,16 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <TextView
-                android:id="@+id/tvPilihTglLahir"
+            <Button
+                android:id="@+id/btnPilihTglLahir"
+                style="@style/btn_light"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:background="@color/grey"
+                android:layout_height="64dp"
+                android:layout_gravity="center_vertical"
                 android:gravity="center"
                 android:text="Pilih Tanggal"
-                android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textColor="@color/dark_grey"
+                android:textSize="12dp" />
 
             <!--            <Button-->
             <!--                android:id="@+id/btnPilihTglLahir"-->
@@ -221,12 +221,12 @@
 
         <Button
             android:id="@+id/btnRegister"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/btn_primary"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
             android:layout_marginBottom="10dp"
             android:text="Daftar" />
 
@@ -234,6 +234,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
             <TextView
@@ -248,7 +249,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Masuk"
-                android:textColor="@color/purple_500" />
+                android:textColor="@color/primary"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

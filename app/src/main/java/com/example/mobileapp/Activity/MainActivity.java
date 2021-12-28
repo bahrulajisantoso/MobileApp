@@ -2,6 +2,7 @@ package com.example.mobileapp.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,8 +11,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.mobileapp.API.ApiRequestData;
-import com.example.mobileapp.API.RetroServer;
+import com.example.mobileapp.API.ApiInterface;
+import com.example.mobileapp.API.RetrofitClient;
 import com.example.mobileapp.Adapter.AdapterDataWisata;
 import com.example.mobileapp.Model.DataWisata;
 import com.example.mobileapp.Model.ResponseWisata;
@@ -47,14 +48,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         rvWisata = (RecyclerView) findViewById(R.id.rvWisata);
-        rvLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+//        rvLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        rvLayoutManager = new GridLayoutManager(MainActivity.this, 2);
         rvWisata.setLayoutManager(rvLayoutManager);
         readData();
     }
 
     public void readData() {
-        ApiRequestData apiRequestData = RetroServer.getClient().create(ApiRequestData.class);
-        Call<ResponseWisata> tampilDataWisata = apiRequestData.ardReadData();
+        ApiInterface apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
+        Call<ResponseWisata> tampilDataWisata = apiInterface.getWisata();
 
         tampilDataWisata.enqueue(new Callback<ResponseWisata>() {
             @Override

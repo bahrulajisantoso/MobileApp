@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="btn_primary">
+        <item name="backgroundTint">@color/primary</item>
+    </style>
+
+    <style name="btn_keluar">
+        <item name="backgroundTint">@color/red</item>
+        <item name="cornerRadius">50dp</item>
+    </style>
+
+    <style name="btn_light">
+        <item name="backgroundTint">@color/grey</item>
+    </style>
+
+    <style name="input_text">
+        <item name="cornerRadius">50dp</item>
+    </style>
+
+</resources>
