@@ -66,7 +66,7 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
 //        holder.tvDeskripsi.setText(DataWisata.getDeskripsi());
         holder.tvLokasi.setText(DataWisata.getLokasi());
         holder.tvGambar.setText(DataWisata.getGambar());
-        holder.tvHargaTiket.setText(String.valueOf(DataWisata.getHargaTiket()));
+
 
 //        Glide.with(ctx).asBitmap().load(fotoMakanan).get(position).into(holder.imageView);
 
@@ -97,7 +97,7 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
 
     public class HolderData extends RecyclerView.ViewHolder {
         TextView tvId, tvNamaWisata, tvKategori, tvDeskripsi,
-                tvLokasi, tvGambar, tvHargaTiket;
+                tvLokasi, tvGambar;
 
         CardView cardView;
 
@@ -110,7 +110,7 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
 //            tvDeskripsi = (TextView) itemView.findViewById(R.id.tvDeskripsi);
             tvLokasi = (TextView) itemView.findViewById(R.id.tvLokasi);
             tvGambar = (TextView) itemView.findViewById(R.id.ivGambar);
-            tvHargaTiket = (TextView) itemView.findViewById(R.id.tvHargaTiket);
+
             cardView = (CardView) itemView.findViewById(R.id.cardViewWisata);
         }
     }

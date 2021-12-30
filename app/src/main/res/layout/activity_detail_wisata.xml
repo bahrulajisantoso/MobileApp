@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary"
     tools:context=".Activity.DetailWisata">
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="800dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="-100dp"
+        android:background="@drawable/bg_gradasi"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/ivGambarDetail"
             android:layout_width="match_parent"
-            android:layout_height="244dp"
+            android:layout_height="300dp"
             android:layout_gravity="center"
-            android:layout_margin="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@color/primary"
             app:srcCompat="@mipmap/ic_launcher" />
 
@@ -25,11 +35,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
+
             android:text="Nama Wisata"
-            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:textSize="25dp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -37,20 +47,21 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp">
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rp"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tvHargaTiketDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+
                 android:paddingLeft="5dp"
                 android:text="Harga Tiket"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
 
         </LinearLayout>
 
@@ -59,24 +70,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp"
+
             android:text="Kategori"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/tvLokasiDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp"
+
             android:text="Lokasi"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
 
 
         <TextView
             android:id="@+id/tvDeskripsi"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="110dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="Deskripsi"
@@ -95,4 +106,4 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

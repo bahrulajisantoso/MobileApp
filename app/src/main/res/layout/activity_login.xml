@@ -5,31 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/primary"
     tools:context=".Activity.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="101dp"
+            android:layout_marginTop="40dp"
+            app:srcCompat="@drawable/logo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:layout_marginBottom="-50dp"
+        android:background="@drawable/bg_gradasi"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
             android:fontFamily="@font/poppinsbold"
             android:gravity="center"
-            android:text="Selamat Datang"
+            android:layout_marginTop="40dp"
+            android:text="Selamat Datang di Arah Kita"
             android:textColor="@color/primary"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
+
+        <TextView
+            android:fontFamily="@font/poppinsbold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masuk Untuk mulai"
+            android:layout_marginLeft="55dp"
+            android:textSize="15dp"
+            android:layout_marginBottom="40dp"
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:hint="Email">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -38,6 +65,8 @@
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_email"
                 android:drawableRight="@drawable/ic_email"
+                android:background="@color/white"
+
                 android:fontFamily="@font/poppinsmedium"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -58,6 +87,8 @@
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_pass"
                 android:drawableRight="@drawable/ic_pass"
+                android:background="@color/white"
+
                 android:fontFamily="@font/poppinsmedium"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -74,19 +105,21 @@
 
         <Button
             android:id="@+id/btnLogin"
-            style="@style/btn_primary"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="27dp"
-            android:layout_marginRight="27dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            android:backgroundTint="#00C1CD"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+
             android:text="Masuk" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
             android:orientation="horizontal">
 
             <TextView
@@ -101,8 +134,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Daftar"
-                android:textColor="@color/primary"
-                android:textStyle="bold" />
+                android:textColor="@color/primary" />
 
         </LinearLayout>
 

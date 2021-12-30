@@ -6,6 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/primary"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:text="Pesan Tiket"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+    </RelativeLayout>
+
+
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,6 +33,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvWisata"
+        android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/data_item_wisata" />
@@ -22,6 +43,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_nav"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
         app:menu="@menu/bottom_navigation" />
 
 </RelativeLayout>
