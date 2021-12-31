@@ -26,10 +26,10 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText etNama, etEmail, etNoHp, etNik, etJeniKel, etTglLahir, etAlamat, etPassword, etKonfirmPassword;
-    Button btnRegister, btnPilihTglLahir;
-    TextView tvLogin;
-    String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword;
+    private EditText etNama, etEmail, etNoHp, etNik, etJeniKel, etTglLahir, etAlamat, etPassword, etKonfirmPassword;
+    private Button btnRegister, btnPilihTglLahir;
+    private TextView tvLogin;
+    private String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,31 +61,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 datePickerDialog.show();
             }
         });
-//        onDateSetListener = new DatePickerDialog.OnDateSetListener() {
-//            @Override
-//            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-//                month = month + 1;
-//                String date = day + "/" + month + "/" + year;
-//                etTglLahir.setText(date);
-//            }
-//        };
-
-//
-//        etTglLahir.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                DatePickerDialog datePickerDialog = new DatePickerDialog(
-//                        RegisterActivity.this, new DatePickerDialog.OnDateSetListener() {
-//                    @Override
-//                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-//                        String date = day + "/" + month + "/" + year;
-//                        etTglLahir.setText(date);
-//                    }
-//                }, year, month, day
-//                );
-//                datePickerDialog.show();
-//            }
-//        });
 
         etNama = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);

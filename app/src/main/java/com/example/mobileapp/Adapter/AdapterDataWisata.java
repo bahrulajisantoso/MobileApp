@@ -5,16 +5,15 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.mobileapp.API.RetrofitClient;
 import com.example.mobileapp.Activity.DetailWisata;
 import com.example.mobileapp.Model.DataWisata;
 import com.example.mobileapp.R;
@@ -24,7 +23,7 @@ import java.util.List;
 public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.HolderData> {
     private Context ctx;
     private List<DataWisata> listWisata;
-    public static String img="http://192.168.0.102/app%20landing%20page/Arah%20Kita%20WEB/img/wisata/";
+
     public AdapterDataWisata(Context ctx, List<DataWisata> listWisata) {
         this.ctx = ctx;
         this.listWisata = listWisata;
@@ -39,52 +38,31 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
 
     }
 
-//    holder.linearlayout.setOnClickListener(new View.OnClickListener()
-//
-//    {
-//        @Override
-//        public void onClick (View view){
-//        // Toast.makeText(ctx,DataWisata.getNamaWisata(), Toast.LENGTH_LONG).show();
-//
-//        Intent intent = new Intent(ctx, DetailWisata.class);
-//
-//        intent.putExtra("gambar_wisata", DataWisata.getGambar());
-//        intent.putExtra("nama_wisata", DataWisata.getNamaWisata());
-//        intent.putExtra("kategori", DataWisata.getKategori());
-//        intent.putExtra("lokasi", DataWisata.getLokasi());
-//        intent.putExtra("harga_tiket", DataWisata.getHargaTiket());
-//        intent.putExtra("deskripsi", DataWisata.getDeskripsi());
-//
-//        ctx.startActivity(intent);
-//    }
-//    });
-
     @Override
     public void onBindViewHolder(@NonNull HolderData holder, int position) {
-        DataWisata DataWisata = listWisata.get(position);
+        DataWisata dataWisata = listWisata.get(position);
 //        holder.tvId.setText(String.valueOf(DataItemWisata.getIdWisata()));
-        holder.tvNamaWisata.setText(DataWisata.getNamaWisata());
-        holder.tvKategori.setText(DataWisata.getKategori());
-//        holder.tvDeskripsi.setText(DataWisata.getDeskripsi());
-        holder.tvLokasi.setText(DataWisata.getLokasi());
+        holder.tvNamaWisata.setText(dataWisata.getNamaWisata());
+        holder.tvKategori.setText(dataWisata.getKategori());
+//        holder.tvDeskripsi.setText(dataWisata.getDeskripsi());
+        holder.tvLokasi.setText(dataWisata.getLokasi());
 
-
-       Glide.with(ctx).asBitmap().load(img+DataWisata.getGambar()).into(holder.tvGambar);
-
+        // load gambar
+        Glide.with(ctx).asBitmap().load(RetrofitClient.getImageUrl() + dataWisata.getGambar()).into(holder.ivGambar);
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(ctx, DataWisata.getNamaWisata(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(ctx, dataWisata.getNamaWisata(), Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(ctx, DetailWisata.class);
 
-                intent.putExtra("GAMBAR_WISATA", DataWisata.getGambar());
-                intent.putExtra("NAMA_WISATA", DataWisata.getNamaWisata());
-                intent.putExtra("KATEGORI", DataWisata.getKategori());
-                intent.putExtra("LOKASI", DataWisata.getLokasi());
-                intent.putExtra("HARGA_TIKET", String.valueOf(DataWisata.getHargaTiket()));
-                intent.putExtra("DESKRIPSI", DataWisata.getDeskripsi());
+                intent.putExtra("GAMBAR_WISATA", dataWisata.getGambar());
+                intent.putExtra("NAMA_WISATA", dataWisata.getNamaWisata());
+                intent.putExtra("KATEGORI", dataWisata.getKategori());
+                intent.putExtra("LOKASI", dataWisata.getLokasi());
+                intent.putExtra("HARGA_TIKET", String.valueOf(dataWisata.getHargaTiket()));
+                intent.putExtra("DESKRIPSI", dataWisata.getDeskripsi());
 
                 ctx.startActivity(intent);
             }
@@ -99,7 +77,7 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
     public class HolderData extends RecyclerView.ViewHolder {
         TextView tvId, tvNamaWisata, tvKategori, tvDeskripsi,
                 tvLokasi;
-        ImageView tvGambar;
+        ImageView ivGambar;
 
         CardView cardView;
 
@@ -111,7 +89,7 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
             tvKategori = (TextView) itemView.findViewById(R.id.tvKategori);
 //            tvDeskripsi = (TextView) itemView.findViewById(R.id.tvDeskripsi);
             tvLokasi = (TextView) itemView.findViewById(R.id.tvLokasi);
-            tvGambar = (ImageView) itemView.findViewById(R.id.tvGambar);
+            ivGambar = (ImageView) itemView.findViewById(R.id.tvGambar);
 
             cardView = (CardView) itemView.findViewById(R.id.cardViewWisata);
         }

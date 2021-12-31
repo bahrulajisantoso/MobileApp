@@ -20,9 +20,9 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class UserActivity extends AppCompatActivity {
 
-    TextView tvNama, tvEmail, tvNik, tvNoHp, tvTglLahir, tvJenisKel, tvAlamat;
-    Button btnLogout, btnEdit;
-    String nama, email, nik, noHp, tglLahir, jenisKel, alamat;
+    private TextView tvNama, tvEmail, tvNik, tvNoHp, tvTglLahir, tvJenisKel, tvAlamat;
+    private Button btnLogout, btnEdit;
+    private String nama, email, nik, noHp, tglLahir, jenisKel, alamat;
     private BottomNavigationView bottomNavigationView;
 
     @Override

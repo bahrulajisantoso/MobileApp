@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +17,6 @@ import com.example.mobileapp.Model.DataLogin;
 import com.example.mobileapp.Model.ResponseLogin;
 import com.example.mobileapp.R;
 import com.example.mobileapp.Session.SessionManager;
-import com.google.android.material.textfield.TextInputEditText;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,10 +24,10 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextInputEditText etEmail, etPassword;
-    Button btnLogin;
-    String email, password;
-    TextView tvRegister;
+    private EditText etEmail, etPassword;
+    private Button btnLogin;
+    private String email, password;
+    private TextView tvRegister;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

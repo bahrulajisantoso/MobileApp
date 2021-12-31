@@ -14,13 +14,13 @@ public class SessionManager {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
-    private static final String IS_LOGIN = "isLoggedIn";
+    private static final String IS_LOGIN = "isLogin";
     private static final String NAMA = "nama";
     private static final String NIK = "nik";
     private static final String EMAIL = "email";
     private static final String NO_HP = "noHp";
     private static final String TANGGAL_LAHIR = "tglLahir";
-    private static final String JENIS_KELAMIN = "Jeniskel";
+    private static final String JENIS_KELAMIN = "jenisKel";
     private static final String ALAMAT = "alamat";
 
     public SessionManager(Context context) {

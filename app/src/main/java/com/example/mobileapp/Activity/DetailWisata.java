@@ -5,41 +5,39 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.mobileapp.API.RetrofitClient;
 import com.example.mobileapp.R;
 
 public class DetailWisata extends AppCompatActivity implements View.OnClickListener {
 
-    TextView  tvNamaWisata, tvKategori, tvLokasi, tvHargaTiket, tvDeskripsi,kembali;
-    String gambarWisata, namaWisata, kategori, lokasi, hargaTiket, deskripsi;
-    ImageView tvGambarWisata;
-    ImageButton btnKembali;
+    private TextView tvNamaWisata, tvKategori, tvLokasi, tvHargaTiket, tvDeskripsi, kembali;
+    private String gambarWisata, namaWisata, kategori, lokasi, hargaTiket, deskripsi;
+    private ImageView ivGambarWisata;
+    private ImageButton btnKembali;
 
-    public static String img="http://192.168.0.102/app%20landing%20page/Arah%20Kita%20WEB/img/wisata/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_wisata);
 
-        tvGambarWisata = findViewById(R.id.ivGambarDetail);
+        ivGambarWisata = findViewById(R.id.ivGambarDetail);
         tvNamaWisata = findViewById(R.id.tvNamaWisataDetail);
         tvKategori = findViewById(R.id.tvKategoriDetail);
         tvLokasi = findViewById(R.id.tvLokasiDetail);
         tvHargaTiket = findViewById(R.id.tvHargaTiketDetail);
         tvDeskripsi = findViewById(R.id.tvDeskripsi);
 
-        btnKembali= findViewById(R.id.btnKembali);
+        btnKembali = findViewById(R.id.btnKembali);
         kembali = findViewById(R.id.kembali);
         btnKembali.setOnClickListener(this);
         kembali.setOnClickListener(this);
         getIncomingExtra();
     }
-
 
 
     private void getIncomingExtra() {
@@ -58,7 +56,9 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
             hargaTiket = getIntent().getStringExtra("HARGA_TIKET");
             deskripsi = getIntent().getStringExtra("DESKRIPSI");
 
-            Glide.with(DetailWisata.this).load(img+gambarWisata).into(tvGambarWisata);
+            // load gambar
+            Glide.with(DetailWisata.this).load(RetrofitClient.getImageUrl() + gambarWisata).into(ivGambarWisata);
+
             tvNamaWisata.setText(namaWisata);
             tvKategori.setText(kategori);
             tvLokasi.setText(lokasi);
@@ -67,6 +67,7 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
