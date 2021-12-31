@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,8 @@ import retrofit2.Response;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText etNama, etEmail, etNoHp, etNik, etJeniKel, etTglLahir, etAlamat, etPassword, etKonfirmPassword;
-    private Button btnRegister, btnPilihTglLahir;
+    private Button btnRegister;
+    private ImageButton btnPilihTglLahir;
     private TextView tvLogin;
     private String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword;
 
@@ -37,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
 
         // bind
-        btnPilihTglLahir = (Button) findViewById(R.id.btnPilihTglLahir);
+        btnPilihTglLahir = (ImageButton) findViewById(R.id.btnPilihTglLahir);
         etTglLahir = (EditText) findViewById(R.id.etTglLahir);
 
         Calendar calendar = Calendar.getInstance();

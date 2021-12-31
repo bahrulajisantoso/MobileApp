@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +22,8 @@ import com.google.android.material.navigation.NavigationBarView;
 public class UserActivity extends AppCompatActivity {
 
     private TextView tvNama, tvEmail, tvNik, tvNoHp, tvTglLahir, tvJenisKel, tvAlamat;
-    private Button btnLogout, btnEdit;
+    private ImageButton btnLogout;
+    private Button btnEdit;
     private String nama, email, nik, noHp, tglLahir, jenisKel, alamat;
     private BottomNavigationView bottomNavigationView;
 

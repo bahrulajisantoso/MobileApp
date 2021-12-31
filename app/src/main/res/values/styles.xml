@@ -9,8 +9,13 @@
         <item name="backgroundTint">@color/white</item>
         <item name="cornerRadius">50dp</item>
     </style>
+
     <style name="field">
         <item name="backgroundTint">@color/primary</item>
         <item name="cornerRadius">50dp</item>
+    </style>
+
+    <style name="ic_keluar">
+        <item name="color">@color/red</item>
     </style>
 </resources>

@@ -75,10 +75,10 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
                 Intent kembali = new Intent(this, MainActivity.class);
                 startActivity(kembali);
                 break;
-            case R.id.kembali:
-                Intent kembali2 = new Intent(this, MainActivity.class);
-                startActivity(kembali2);
-                break;
+//            case R.id.kembali:
+//                Intent kembali2 = new Intent(this, MainActivity.class);
+//                startActivity(kembali2);
+//                break;
         }
     }
 }

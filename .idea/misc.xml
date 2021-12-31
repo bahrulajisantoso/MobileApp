@@ -5,7 +5,10 @@
       <map>
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/bg.xml" value="0.290625" />
+        <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/bg_corner_primary.xml" value="0.290625" />
+        <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/bg_gradasi.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/border.xml" value="0.290625" />
+        <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/bottom_nav.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/btn.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/button.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/field.xml" value="0.290625" />
@@ -15,6 +18,7 @@
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_email.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_gender.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_home.xml" value="0.290625" />
+        <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_keluar.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_name.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_nik.xml" value="0.290625" />

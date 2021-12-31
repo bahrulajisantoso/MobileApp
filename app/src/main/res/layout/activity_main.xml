@@ -8,23 +8,20 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/primary"
-        >
+        android:layout_height="70dp"
+        android:background="@color/primary">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:text="Pesan Tiket"
+            android:gravity="center"
+            android:text="Beranda"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:textSize="25dp"
             android:textStyle="bold" />
 
     </RelativeLayout>
-
-
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -35,7 +32,7 @@
         android:id="@+id/rvWisata"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         tools:listitem="@layout/data_item_wisata" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
