@@ -16,13 +16,13 @@
         android:layout_margin="10dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/ivGambar"
+        <ImageView
+            android:id="@+id/tvGambar"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:layout_marginLeft="5dp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/primary"
+            android:layout_marginLeft="5dp"
+
             android:src="@drawable/ic_launcher_background"
             android:text="Gambar Wisata"
             android:textSize="20dp" />

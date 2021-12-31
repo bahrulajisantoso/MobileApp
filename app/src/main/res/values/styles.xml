@@ -6,16 +6,11 @@
     </style>
 
     <style name="btn_keluar">
-        <item name="backgroundTint">@color/red</item>
+        <item name="backgroundTint">@color/white</item>
         <item name="cornerRadius">50dp</item>
     </style>
-
-    <style name="btn_light">
-        <item name="backgroundTint">@color/grey</item>
-    </style>
-
-    <style name="input_text">
+    <style name="field">
+        <item name="backgroundTint">@color/primary</item>
         <item name="cornerRadius">50dp</item>
     </style>
-
 </resources>

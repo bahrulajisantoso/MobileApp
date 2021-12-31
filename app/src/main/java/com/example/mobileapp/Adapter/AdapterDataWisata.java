@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.mobileapp.Activity.DetailWisata;
 import com.example.mobileapp.Model.DataWisata;
 import com.example.mobileapp.R;
@@ -22,7 +24,7 @@ import java.util.List;
 public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.HolderData> {
     private Context ctx;
     private List<DataWisata> listWisata;
-
+    public static String img="http://192.168.0.102/app%20landing%20page/Arah%20Kita%20WEB/img/wisata/";
     public AdapterDataWisata(Context ctx, List<DataWisata> listWisata) {
         this.ctx = ctx;
         this.listWisata = listWisata;
@@ -65,10 +67,9 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
         holder.tvKategori.setText(DataWisata.getKategori());
 //        holder.tvDeskripsi.setText(DataWisata.getDeskripsi());
         holder.tvLokasi.setText(DataWisata.getLokasi());
-        holder.tvGambar.setText(DataWisata.getGambar());
 
 
-//        Glide.with(ctx).asBitmap().load(fotoMakanan).get(position).into(holder.imageView);
+       Glide.with(ctx).asBitmap().load(img+DataWisata.getGambar()).into(holder.tvGambar);
 
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +98,8 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
 
     public class HolderData extends RecyclerView.ViewHolder {
         TextView tvId, tvNamaWisata, tvKategori, tvDeskripsi,
-                tvLokasi, tvGambar;
+                tvLokasi;
+        ImageView tvGambar;
 
         CardView cardView;
 
@@ -109,7 +111,7 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
             tvKategori = (TextView) itemView.findViewById(R.id.tvKategori);
 //            tvDeskripsi = (TextView) itemView.findViewById(R.id.tvDeskripsi);
             tvLokasi = (TextView) itemView.findViewById(R.id.tvLokasi);
-            tvGambar = (TextView) itemView.findViewById(R.id.ivGambar);
+            tvGambar = (ImageView) itemView.findViewById(R.id.tvGambar);
 
             cardView = (CardView) itemView.findViewById(R.id.cardViewWisata);
         }

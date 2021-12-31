@@ -10,16 +10,9 @@
     <color name="grey">#DCDCDC</color>
     <color name="primary">#004AAD</color>
     <color name="red">#DB1514</color>
-    <color name="dark_grey">#757575</color>
 
     // color button
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
 
     // custom color button
-    <color name="buttonDefault">#073042</color>
-    <color name="buttonClicked">#3FDA84</color>
-    <color name="buttonFocused">#3FDA84</color>
 
 </resources>

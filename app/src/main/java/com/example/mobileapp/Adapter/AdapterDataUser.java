@@ -1,14 +1,19 @@
 package com.example.mobileapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mobileapp.Activity.DetailWisata;
+import com.example.mobileapp.Activity.EditActivity;
 import com.example.mobileapp.Model.DataUser;
 import com.example.mobileapp.R;
 
@@ -37,11 +42,30 @@ public class AdapterDataUser extends RecyclerView.Adapter<AdapterDataUser.Holder
         DataUser DataUser = listUser.get(position);
 
         holder.tvNama.setText(DataUser.getNamaUser());
-        holder.tvNik.setText(DataUser.getNik());
+     //   holder.tvNik.setText(DataUser.getNik());
         holder.tvEmail.setText(DataUser.getEmail());
         holder.tvNoHp.setText(DataUser.getNoHp());
         holder.tvTglLahir.setText(DataUser.getTglLahir());
         holder.tvJeniskel.setText(DataUser.getJenisKelamin());
+        
+        
+        holder.btn_edit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ctx, EditActivity.class);
+
+                intent.putExtra("NAMA-USER", DataUser.getNamaUser());
+                intent.putExtra("EMAIL", DataUser.getEmail());
+                intent.putExtra("NO-HP", DataUser.getNoHp());
+                intent.putExtra("TGL-LAHIR", DataUser.getTglLahir());
+                intent.putExtra("JENIS-KELAMIN", DataUser.getJenisKelamin());
+
+
+                ctx.startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -51,6 +75,7 @@ public class AdapterDataUser extends RecyclerView.Adapter<AdapterDataUser.Holder
     }
 
     public class HolderData extends RecyclerView.ViewHolder {
+        Button btn_edit;
         TextView tvNama, tvNik, tvEmail, tvNoHp, tvTglLahir, tvJeniskel;
 
         public HolderData(@NonNull View itemView) {
@@ -62,6 +87,7 @@ public class AdapterDataUser extends RecyclerView.Adapter<AdapterDataUser.Holder
             tvNoHp = (TextView) itemView.findViewById(R.id.tvNoHp);
             tvTglLahir = (TextView) itemView.findViewById(R.id.tvTglLahir);
             tvJeniskel = (TextView) itemView.findViewById(R.id.tvJenisKel);
+            btn_edit = (Button) itemView.findViewById(R.id.btn_edit);
         }
     }
 }

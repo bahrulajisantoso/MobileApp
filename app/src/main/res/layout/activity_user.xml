@@ -17,203 +17,184 @@
     <!--        android:layout_height="match_parent"-->
     <!--        tools:listitem="@layout/data_item_user" />-->
 
-    <ImageView
-        android:id="@+id/ivUser"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_user" />
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_marginTop="-40dp"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="@drawable/bg_corner_primary">
+
+        <ImageView
+            android:id="@+id/ivUser"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="2dp"
+            android:src="@drawable/ic_user" />
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivUser"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/primary"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Edit Profil"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            style="@style/btn_keluar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ic_keluar"
+            android:backgroundTint="@color/white" />
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/detail"
+        android:layout_below="@id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ivUser"
-        android:layout_margin="20dp"
-        android:orientation="horizontal"
+
+
+        android:orientation="vertical"
         android:paddingRight="4dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Nama"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Email"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="No HP"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Tanggal Lahir"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Jenis kelamin"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Alamat"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text=":"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text=":"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text=":"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text=":"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text=":"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="vertical"
-            android:padding="5dp">
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Nama"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tvNama"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/poppinsmedium"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/field"
+
+                android:layout_marginBottom="15dp"
                 android:text="Nama"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tvEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+               android:background="@drawable/field"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="15dp"
                 android:text="Email"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="No HP"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tvNoHp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="15dp"
                 android:text="No HP"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:fontFamily="@font/poppinsmedium"
+                android:text="Tanggal Lahir"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tvTglLahir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:background="@drawable/field"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="15dp"
                 android:text="Tanggal Lahir"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Jenis kelamin"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tvJenisKel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:background="@drawable/field"
+                android:layout_marginBottom="15dp"
                 android:text="Jenis kelamin"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Alamat"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tvAlamat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:background="@drawable/field"
+                android:layout_marginLeft="20dp"
                 android:text="Alamat"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
 
         </LinearLayout>
 
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnLogout"
-        style="@style/btn_keluar"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/detail"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:text="Keluar" />
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

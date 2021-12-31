@@ -21,7 +21,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class UserActivity extends AppCompatActivity {
 
     TextView tvNama, tvEmail, tvNik, tvNoHp, tvTglLahir, tvJenisKel, tvAlamat;
-    Button btnLogout;
+    Button btnLogout, btnEdit;
     String nama, email, nik, noHp, tglLahir, jenisKel, alamat;
     private BottomNavigationView bottomNavigationView;
 
@@ -46,6 +46,7 @@ public class UserActivity extends AppCompatActivity {
         tvAlamat = findViewById(R.id.tvAlamat);
 
         btnLogout = findViewById(R.id.btnLogout);
+        btnEdit = findViewById(R.id.btn_edit);
 
         nama = sessionManager.getUserData().get(SessionManager.getNAMA());
         email = sessionManager.getUserData().get(SessionManager.getEMAIL());
