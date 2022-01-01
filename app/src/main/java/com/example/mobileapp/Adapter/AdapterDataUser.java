@@ -65,8 +65,6 @@ public class AdapterDataUser extends RecyclerView.Adapter<AdapterDataUser.Holder
                 ctx.startActivity(intent);
             }
         });
-
-
     }
 
     @Override
@@ -75,8 +73,8 @@ public class AdapterDataUser extends RecyclerView.Adapter<AdapterDataUser.Holder
     }
 
     public class HolderData extends RecyclerView.ViewHolder {
-        ;
-        TextView tvNama, tvNik, tvEmail, tvNoHp, tvTglLahir, tvJeniskel, tvEdit;
+
+        private TextView tvNama, tvNik, tvEmail, tvNoHp, tvTglLahir, tvJeniskel, tvEdit;
 
         public HolderData(@NonNull View itemView) {
             super(itemView);

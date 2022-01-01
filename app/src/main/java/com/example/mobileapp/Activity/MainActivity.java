@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         rvWisata = (RecyclerView) findViewById(R.id.rvWisata);
-      rvLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-  //      rvLayoutManager = new GridLayoutManager(MainActivity.this, 2);
+        rvLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        //      rvLayoutManager = new GridLayoutManager(MainActivity.this, 2);
         rvWisata.setLayoutManager(rvLayoutManager);
         readData();
     }

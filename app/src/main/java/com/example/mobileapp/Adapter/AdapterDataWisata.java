@@ -75,11 +75,9 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
     }
 
     public class HolderData extends RecyclerView.ViewHolder {
-        TextView tvId, tvNamaWisata, tvKategori, tvDeskripsi,
-                tvLokasi;
-        ImageView ivGambar;
-
-        CardView cardView;
+        private TextView tvId, tvNamaWisata, tvKategori, tvDeskripsi, tvLokasi;
+        private ImageView ivGambar;
+        private CardView cardView;
 
         public HolderData(@NonNull View itemView) {
             super(itemView);

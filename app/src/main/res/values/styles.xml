@@ -16,6 +16,12 @@
     </style>
 
     <style name="ic_keluar">
-        <item name="color">@color/red</item>
+        <item name="backgroundTint">@color/red</item>
     </style>
+
+    <style name="bottomNavigationStyle" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
 </resources>

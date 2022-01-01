@@ -16,7 +16,7 @@ public class SessionManager {
 
     private static final String IS_LOGIN = "isLogin";
     private static final String NAMA = "nama";
-    private static final String NIK = "nik";
+//    private static final String NIK = "nik";
     private static final String EMAIL = "email";
     private static final String NO_HP = "noHp";
     private static final String TANGGAL_LAHIR = "tglLahir";
@@ -32,7 +32,7 @@ public class SessionManager {
     public void createLoginSession(DataLogin dataLogin) {
         editor.putBoolean(IS_LOGIN, true);
         editor.putString(NAMA, dataLogin.getNamaUser());
-        editor.putString(NIK, dataLogin.getNik());
+//        editor.putString(NIK, dataLogin.getNik());
         editor.putString(EMAIL, dataLogin.getEmail());
         editor.putString(NO_HP, dataLogin.getNoHp());
         editor.putString(TANGGAL_LAHIR, dataLogin.getTglLahir());
@@ -45,7 +45,7 @@ public class SessionManager {
         HashMap<String, String> user = new HashMap<>();
         user.put(NAMA, sharedPreferences.getString(NAMA, null));
         user.put(EMAIL, sharedPreferences.getString(EMAIL, null));
-        user.put(NIK, sharedPreferences.getString(NIK, null));
+//        user.put(NIK, sharedPreferences.getString(NIK, null));
         user.put(NO_HP, sharedPreferences.getString(NO_HP, null));
         user.put(TANGGAL_LAHIR, sharedPreferences.getString(TANGGAL_LAHIR, null));
         user.put(JENIS_KELAMIN, sharedPreferences.getString(JENIS_KELAMIN, null));
@@ -66,9 +66,9 @@ public class SessionManager {
         return NAMA;
     }
 
-    public static String getNIK() {
-        return NIK;
-    }
+//    public static String getNIK() {
+//        return NIK;
+//    }
 
     public static String getEMAIL() {
         return EMAIL;

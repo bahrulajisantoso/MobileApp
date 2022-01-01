@@ -18,9 +18,10 @@ public interface ApiInterface {
     Call<ResponseWisata> getWisata();
 
     // tampil user
-    @GET("user.php")
-    Call<ResponseUser> getUser();
+//    @GET("user.php")
+//    Call<ResponseUser> getUser();
 
+    // login
     @FormUrlEncoded
     @POST("login.php")
     Call<ResponseLogin> getLogin(
@@ -28,6 +29,7 @@ public interface ApiInterface {
             @Field("password") String password
     );
 
+    // register
     @FormUrlEncoded
     @POST("register.php")
     Call<ResponseRegister> addUser(

@@ -50,6 +50,7 @@
             android:layout_toRightOf="@+id/ivUser"
             android:background="@drawable/ic_keluar"
             android:backgroundTint="@color/white" />
+
     </RelativeLayout>
 
     <LinearLayout
