@@ -14,6 +14,7 @@
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/field.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/grgreg.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_account.xml" value="0.290625" />
+        <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_calendar.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_email.xml" value="0.290625" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/drawable/ic_gender.xml" value="0.290625" />
@@ -28,6 +29,7 @@
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/layout/activity_account.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/layout/activity_detail_wisata.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/layout/activity_detail_wisata2.xml" value="0.23731884057971014" />
+        <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/layout/activity_edit_profil.xml" value="0.25407608695652173" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/AJI/Documents/AndroidStudioProjects/MobileApp/app/src/main/res/layout/activity_register.xml" value="0.4" />

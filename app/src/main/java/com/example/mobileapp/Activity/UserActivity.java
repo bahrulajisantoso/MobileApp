@@ -21,9 +21,8 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class UserActivity extends AppCompatActivity {
 
-    private TextView tvNama, tvEmail, tvNik, tvNoHp, tvTglLahir, tvJenisKel, tvAlamat;
+    private TextView tvNama, tvEmail, tvNik, tvNoHp, tvTglLahir, tvJenisKel, tvAlamat, tvEdit;
     private ImageButton btnLogout;
-    private Button btnEdit;
     private String nama, email, nik, noHp, tglLahir, jenisKel, alamat;
     private BottomNavigationView bottomNavigationView;
 
@@ -48,7 +47,7 @@ public class UserActivity extends AppCompatActivity {
         tvAlamat = findViewById(R.id.tvAlamat);
 
         btnLogout = findViewById(R.id.btnLogout);
-        btnEdit = findViewById(R.id.btn_edit);
+        tvEdit = findViewById(R.id.tvEdit);
 
         nama = sessionManager.getUserData().get(SessionManager.getNAMA());
         email = sessionManager.getUserData().get(SessionManager.getEMAIL());
@@ -95,6 +94,15 @@ public class UserActivity extends AppCompatActivity {
                                 finish();
                             }
                         }).show();
+            }
+        });
+
+        tvEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserActivity.this, EditActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

@@ -26,7 +26,6 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="18dp"
             android:layout_toRightOf="@+id/btnKembali"
-            android:gravity="center_vertical"
             android:text="Pesan tiket"
             android:textColor="@color/white"
             android:textSize="25dp"
@@ -96,7 +95,6 @@
             android:text="Lokasi"
             android:textSize="15dp" />
 
-
         <TextView
             android:id="@+id/tvDeskripsi"
             android:layout_width="match_parent"
@@ -115,7 +113,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:text="Pesan Tiket" />
-
 
     </LinearLayout>
 

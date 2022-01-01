@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileApp">
         <activity
+            android:name=".Activity.EditActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.DetailWisata"
             android:exported="false" />
         <activity

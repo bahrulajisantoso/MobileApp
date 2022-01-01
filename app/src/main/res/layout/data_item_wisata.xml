@@ -5,7 +5,9 @@
     android:id="@+id/cardViewWisata"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="8dp"
     app:cardCornerRadius="20dp"
     app:strokeColor="@color/grey"
     app:strokeWidth="1dp">
@@ -22,7 +24,6 @@
             android:layout_height="75dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="5dp"
-
             android:src="@drawable/ic_launcher_background"
             android:text="Gambar Wisata"
             android:textSize="20dp" />
@@ -70,7 +71,6 @@
             android:layout_marginTop="40dp"
             android:text="Lokasi Wisata"
             android:textSize="15dp" />
-
 
     </RelativeLayout>
 

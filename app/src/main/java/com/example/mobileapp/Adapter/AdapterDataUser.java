@@ -42,14 +42,14 @@ public class AdapterDataUser extends RecyclerView.Adapter<AdapterDataUser.Holder
         DataUser DataUser = listUser.get(position);
 
         holder.tvNama.setText(DataUser.getNamaUser());
-     //   holder.tvNik.setText(DataUser.getNik());
+        //   holder.tvNik.setText(DataUser.getNik());
         holder.tvEmail.setText(DataUser.getEmail());
         holder.tvNoHp.setText(DataUser.getNoHp());
         holder.tvTglLahir.setText(DataUser.getTglLahir());
         holder.tvJeniskel.setText(DataUser.getJenisKelamin());
-        
-        
-        holder.btn_edit.setOnClickListener(new View.OnClickListener(){
+
+
+        holder.tvEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -75,8 +75,8 @@ public class AdapterDataUser extends RecyclerView.Adapter<AdapterDataUser.Holder
     }
 
     public class HolderData extends RecyclerView.ViewHolder {
-        Button btn_edit;
-        TextView tvNama, tvNik, tvEmail, tvNoHp, tvTglLahir, tvJeniskel;
+        ;
+        TextView tvNama, tvNik, tvEmail, tvNoHp, tvTglLahir, tvJeniskel, tvEdit;
 
         public HolderData(@NonNull View itemView) {
             super(itemView);
@@ -87,7 +87,7 @@ public class AdapterDataUser extends RecyclerView.Adapter<AdapterDataUser.Holder
             tvNoHp = (TextView) itemView.findViewById(R.id.tvNoHp);
             tvTglLahir = (TextView) itemView.findViewById(R.id.tvTglLahir);
             tvJeniskel = (TextView) itemView.findViewById(R.id.tvJenisKel);
-            btn_edit = (Button) itemView.findViewById(R.id.btn_edit);
+            tvEdit = (TextView) itemView.findViewById(R.id.tvEdit);
         }
     }
 }

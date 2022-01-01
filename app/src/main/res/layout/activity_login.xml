@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/primary"
+    android:orientation="vertical"
     tools:context=".Activity.RegisterActivity">
 
     <LinearLayout
@@ -20,6 +20,7 @@
             android:layout_height="101dp"
             android:layout_marginTop="40dp"
             app:srcCompat="@drawable/logo" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -32,29 +33,27 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/poppinsbold"
             android:gravity="center"
-            android:layout_marginTop="40dp"
             android:text="Selamat Datang di Arah Kita"
             android:textColor="@color/primary"
             android:textSize="20sp" />
 
         <TextView
-            android:fontFamily="@font/poppinsbold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Masuk Untuk mulai"
             android:layout_marginLeft="55dp"
-            android:textSize="15dp"
             android:layout_marginBottom="40dp"
-            />
+            android:fontFamily="@font/poppinsbold"
+            android:text="Masuk Untuk mulai"
+            android:textSize="15dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-
             android:layout_marginRight="30dp"
             android:layout_marginBottom="20dp"
             android:hint="Email">
@@ -63,10 +62,9 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:drawableEnd="@drawable/ic_email"
                 android:drawableRight="@drawable/ic_email"
-                android:background="@color/white"
-
                 android:fontFamily="@font/poppinsmedium"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -85,23 +83,21 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:drawableEnd="@drawable/ic_pass"
                 android:drawableRight="@drawable/ic_pass"
-                android:background="@color/white"
-
                 android:fontFamily="@font/poppinsmedium"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <!--        <ProgressBar-->
-        <!--            android:id="@+id/progress"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:visibility="gone"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutKonfirmPassword" />-->
+<!--                <ProgressBar-->
+<!--                    android:id="@+id/progress"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutKonfirmPassword" />-->
 
         <Button
             android:id="@+id/btnLogin"
@@ -110,11 +106,10 @@
             android:layout_gravity="center"
             android:layout_marginLeft="26dp"
             android:layout_marginRight="26dp"
-            android:backgroundTint="#00C1CD"
-            android:textSize="20dp"
             android:layout_marginBottom="10dp"
-
-            android:text="Masuk" />
+            android:backgroundTint="#00C1CD"
+            android:text="Masuk"
+            android:textSize="20dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
