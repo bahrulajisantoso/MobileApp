@@ -43,4 +43,19 @@ public interface ApiInterface {
             @Field("password") String password,
             @Field("konfirm_password") String konfirmPassword
     );
+
+    @FormUrlEncoded
+    @POST("update.php")
+    Call<ResponseRegister> updateUser(
+
+            @Field("nama_user") String nama,
+            @Field("email") String email,
+            @Field("no_hp") String nomerhp,
+            @Field("password") String password,
+            @Field("alamat") String alamat,
+            @Field("tgl_lahir") String tgl_lahir,
+            @Field("jenis_kelamin") String jenis_kelamin
+    );
+
+
 }
