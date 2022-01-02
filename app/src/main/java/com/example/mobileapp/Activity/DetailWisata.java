@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.mobileapp.API.RetrofitClient;
 import com.example.mobileapp.R;
+import com.example.mobileapp.Session.SessionManager;
 
 public class DetailWisata extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,6 +25,12 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_wisata);
+
+        // session
+        SessionManager sessionManager = new SessionManager(DetailWisata.this);
+        if (sessionManager.isLogin() == false) {
+            moveToLogin();
+        }
 
         ivGambarWisata = findViewById(R.id.ivGambarDetail);
         tvNamaWisata = findViewById(R.id.tvNamaWisataDetail);
@@ -39,6 +46,12 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
         getIncomingExtra();
     }
 
+    private void moveToLogin() {
+        Intent intent = new Intent(DetailWisata.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        finish();
+    }
 
     private void getIncomingExtra() {
 

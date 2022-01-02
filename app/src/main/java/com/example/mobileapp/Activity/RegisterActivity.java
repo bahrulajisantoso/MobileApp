@@ -4,10 +4,14 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private Button btnRegister;
     private ImageButton btnPilihTglLahir;
     private TextView tvLogin;
+    private Spinner spinJenisKel;
     private String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword;
 
     @Override
@@ -39,8 +44,40 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
 
         // bind
+        etNama = findViewById(R.id.etName);
+        etEmail = findViewById(R.id.etEmail);
+        etNoHp = findViewById(R.id.etNoHp);
+//        etNik = findViewById(R.id.etNik);
+
+        etJeniKel = findViewById(R.id.etJenisKel);
+        etJeniKel.setEnabled(false);
+
+        spinJenisKel = findViewById(R.id.spinJenisKel);
+        final String[] jenisKel = getResources().getStringArray(R.array.jenis_kelamin);
+
+//        Spinner spinnerJenisKel = (Spinner) findViewById(R.id.spinnerJenisKel);
+        spinJenisKel = (Spinner) findViewById(R.id.spinJenisKel);
+
+        ArrayAdapter<CharSequence> adapterJenisKel = new ArrayAdapter<CharSequence>(RegisterActivity.this, android.R.layout.simple_spinner_item, jenisKel);
+        adapterJenisKel.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinJenisKel.setAdapter(adapterJenisKel);
+
+        spinJenisKel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                jenisKelamin = adapterView.getItemAtPosition(i).toString();
+                etJeniKel.setText(jenisKelamin);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         btnPilihTglLahir = (ImageButton) findViewById(R.id.btnPilihTglLahir);
         etTglLahir = (EditText) findViewById(R.id.etTglLahir);
+        etTglLahir.setEnabled(false);
 
         Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_MONTH);
@@ -64,12 +101,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
-        etNama = findViewById(R.id.etName);
-        etEmail = findViewById(R.id.etEmail);
-        etNoHp = findViewById(R.id.etNoHp);
-//        etNik = findViewById(R.id.etNik);
-        etJeniKel = findViewById(R.id.etJenisKel);
-//        etTglLahir = findViewById(R.id.tvTglLahir);
         etAlamat = findViewById(R.id.etAlamat);
         etPassword = findViewById(R.id.etPassword);
         etKonfirmPassword = findViewById(R.id.etKonfirmPassword);
@@ -91,7 +122,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 email = etEmail.getText().toString();
                 noHp = etNoHp.getText().toString();
 //                nik = etNik.getText().toString();
-                jenisKelamin = etJeniKel.getText().toString();
+//                jenisKelamin = etJeniKel.getText().toString();
+//                jenisKelamin = etJeniKel.getText().toString();
                 tglLahir = etTglLahir.getText().toString();
                 alamat = etAlamat.getText().toString();
                 password = etPassword.getText().toString();
@@ -105,8 +137,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     etNoHp.setError("No handphone harus diisi");
 //                } else if (nik.trim().equals("")) {
 //                    etNik.setError("NIK harus diisi");
-                } else if (jenisKelamin.trim().equals("")) {
-                    etJeniKel.setError("Jenis kelamin harus diisi");
+//                } else if (jenisKelamin.trim().equals("")) {
+//                    etJeniKel.setError("Jenis kelamin harus diisi");
+                } else if (jenisKelamin.trim().equals("Pilih")) {
+                    TextView errTv = (TextView) spinJenisKel.getSelectedView();
+                    errTv.setError("Jenis kelamin harus diisi");
                 } else if (tglLahir.trim().equals("")) {
                     etTglLahir.setError("Tanggal lahir harus diisi");
                 } else if (alamat.trim().equals("")) {

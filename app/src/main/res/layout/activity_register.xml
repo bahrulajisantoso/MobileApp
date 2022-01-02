@@ -96,24 +96,47 @@
         <!--                        android:drawableRight="@drawable/ic_nik"-->
         <!--                        android:fontFamily="@font/poppinsmedium" />-->
         <!--                </com.google.android.material.textfield.TextInputLayout>-->
-
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Jenis Kelamin">
+            android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etJenisKel"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Jenis Kelamin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etJenisKel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:editable="false"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:inputType="text"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_gender"
+                android:gravity="center"
+                android:textSize="12dp" />
+
+            <Spinner
+                android:id="@+id/spinJenisKel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:drawableRight="@drawable/ic_gender"
-                android:fontFamily="@font/poppinsmedium"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_gravity="center_vertical" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -133,18 +156,20 @@
                     android:id="@+id/etTglLahir"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
                     android:background="@color/white"
+                    android:editable="false"
                     android:fontFamily="@font/poppinsmedium"
-                    android:inputType="date" />
+                    android:inputType="date"
+                    android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <ImageButton
                 android:id="@+id/btnPilihTglLahir"
-                android:layout_width="34dp"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/ic_calendar"
                 android:gravity="center"
                 android:textSize="12dp" />
@@ -184,7 +209,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:hint="Password">
+            android:hint="Password"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
@@ -192,8 +218,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@color/white"
-                android:drawableEnd="@drawable/ic_pass"
-                android:drawableRight="@drawable/ic_pass"
                 android:fontFamily="@font/poppinsmedium"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -204,15 +228,14 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="10dp"
-            android:hint="Konfirmasi Password">
+            android:hint="Konfirmasi Password"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etKonfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:drawableEnd="@drawable/ic_pass"
-                android:drawableRight="@drawable/ic_pass"
                 android:fontFamily="@font/poppinsmedium"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
