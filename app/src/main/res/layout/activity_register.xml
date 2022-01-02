@@ -96,6 +96,56 @@
         <!--                        android:drawableRight="@drawable/ic_nik"-->
         <!--                        android:fontFamily="@font/poppinsmedium" />-->
         <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutTglLahir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Tanggal Lahir">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTglLahir"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:editable="false"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:inputType="date"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ImageButton
+                android:id="@+id/btnPilihTglLahir"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_calendar"
+                android:backgroundTint="@color/primary"
+                android:gravity="center"
+                android:textSize="12dp" />
+
+            <!--            <Button-->
+            <!--                android:id="@+id/btnPilihTglLahir"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="60dp"-->
+            <!--                android:layout_gravity="center_vertical"-->
+            <!--                android:text="Pilih"-->
+            <!--                android:textColor="@color/dark_grey"-->
+            <!--                android:theme="@style/" />-->
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -135,53 +185,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoutTglLahir"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Tanggal Lahir">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etTglLahir"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:editable="false"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:inputType="date"
-                    android:textColor="@color/black" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <ImageButton
-                android:id="@+id/btnPilihTglLahir"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/ic_calendar"
-                android:gravity="center"
-                android:textSize="12dp" />
-
-            <!--            <Button-->
-            <!--                android:id="@+id/btnPilihTglLahir"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="60dp"-->
-            <!--                android:layout_gravity="center_vertical"-->
-            <!--                android:text="Pilih"-->
-            <!--                android:textColor="@color/dark_grey"-->
-            <!--                android:theme="@style/" />-->
 
         </LinearLayout>
 

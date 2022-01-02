@@ -49,32 +49,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         etNoHp = findViewById(R.id.etNoHp);
 //        etNik = findViewById(R.id.etNik);
 
-        etJeniKel = findViewById(R.id.etJenisKel);
-        etJeniKel.setEnabled(false);
-
-        spinJenisKel = findViewById(R.id.spinJenisKel);
-        final String[] jenisKel = getResources().getStringArray(R.array.jenis_kelamin);
-
-//        Spinner spinnerJenisKel = (Spinner) findViewById(R.id.spinnerJenisKel);
-        spinJenisKel = (Spinner) findViewById(R.id.spinJenisKel);
-
-        ArrayAdapter<CharSequence> adapterJenisKel = new ArrayAdapter<CharSequence>(RegisterActivity.this, android.R.layout.simple_spinner_item, jenisKel);
-        adapterJenisKel.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinJenisKel.setAdapter(adapterJenisKel);
-
-        spinJenisKel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                jenisKelamin = adapterView.getItemAtPosition(i).toString();
-                etJeniKel.setText(jenisKelamin);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
         btnPilihTglLahir = (ImageButton) findViewById(R.id.btnPilihTglLahir);
         etTglLahir = (EditText) findViewById(R.id.etTglLahir);
         etTglLahir.setEnabled(false);
@@ -98,6 +72,32 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 }, year, month, day
                 );
                 datePickerDialog.show();
+            }
+        });
+
+        etJeniKel = findViewById(R.id.etJenisKel);
+        etJeniKel.setEnabled(false);
+
+        spinJenisKel = findViewById(R.id.spinJenisKel);
+        final String[] jenisKel = getResources().getStringArray(R.array.jenis_kelamin);
+
+//        Spinner spinnerJenisKel = (Spinner) findViewById(R.id.spinnerJenisKel);
+        spinJenisKel = (Spinner) findViewById(R.id.spinJenisKel);
+
+        ArrayAdapter<CharSequence> adapterJenisKel = new ArrayAdapter<CharSequence>(RegisterActivity.this, android.R.layout.simple_spinner_item, jenisKel);
+        adapterJenisKel.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinJenisKel.setAdapter(adapterJenisKel);
+
+        spinJenisKel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                jenisKelamin = adapterView.getItemAtPosition(i).toString();
+                etJeniKel.setText(jenisKelamin);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
 
@@ -169,7 +169,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private void register(String nama, String email, String noHp, String nik, String jenisKelamin, String tglLahir, String alamat, String password, String konfirmPassword) {
 
         ApiInterface apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
-        Call<ResponseRegister> responseRegisterCall = apiInterface.addUser(nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword);
+        Call<ResponseRegister> responseRegisterCall = apiInterface.addUser(nama, email, noHp, jenisKelamin, tglLahir, alamat, password, konfirmPassword);
         responseRegisterCall.enqueue(new Callback<ResponseRegister>() {
             @Override
             public void onResponse(Call<ResponseRegister> call, Response<ResponseRegister> response) {

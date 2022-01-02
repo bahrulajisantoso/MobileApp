@@ -36,7 +36,7 @@ public interface ApiInterface {
             @Field("nama_user") String nama,
             @Field("email") String email,
             @Field("no_hp") String noHp,
-            @Field("nik") String nik,
+//            @Field("nik") String nik,
             @Field("jenis_kelamin") String jenisKelamin,
             @Field("tgl_lahir") String tglLahir,
             @Field("alamat") String alamat,
@@ -47,7 +47,6 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("update.php")
     Call<ResponseRegister> updateUser(
-
             @Field("nama_user") String nama,
             @Field("email") String email,
             @Field("no_hp") String nomerhp,
@@ -56,6 +55,4 @@ public interface ApiInterface {
             @Field("tgl_lahir") String tgl_lahir,
             @Field("jenis_kelamin") String jenis_kelamin
     );
-
-
 }
