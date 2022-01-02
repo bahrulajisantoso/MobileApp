@@ -60,6 +60,7 @@ public class AdapterDataUser extends RecyclerView.Adapter<AdapterDataUser.Holder
                 intent.putExtra("NO-HP", DataUser.getNoHp());
                 intent.putExtra("TGL-LAHIR", DataUser.getTglLahir());
                 intent.putExtra("JENIS-KELAMIN", DataUser.getJenisKelamin());
+                intent.putExtra("ALAMAT", DataUser.getAlamat());
 
 
                 ctx.startActivity(intent);
