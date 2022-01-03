@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String IP_ADDRES = "192.168.1.18";
+    private static final String IP_ADDRES = "192.168.1.9";
     //    private static final String IP_ADDRES = "192.168.0.102";
     private static final String BASE_URL = "http://" + IP_ADDRES + "/Web-Service/";
     private static final String IMAGE_URL = "http://" + IP_ADDRES + "/Arah_Kita/Arah_Kita_Web/img/wisata/";

@@ -33,7 +33,7 @@ public class UserActivity extends AppCompatActivity {
 
         // session
         SessionManager sessionManager = new SessionManager(UserActivity.this);
-        if (sessionManager.isLogin() == false) {
+        if (!sessionManager.isLogin()) {
             moveToLogin();
         }
 
@@ -117,6 +117,7 @@ public class UserActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.nav_transaction:

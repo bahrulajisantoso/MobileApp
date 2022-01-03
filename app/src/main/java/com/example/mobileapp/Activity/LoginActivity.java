@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         responseLoginCall.enqueue(new Callback<ResponseLogin>() {
             @Override
             public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
-                if (response.body() != null && response.isSuccessful() && response.body().getKode() == 200) {
+                if (response.body() != null && response.isSuccessful() && response.body().getKode() == 1) {
 
                     // session
                     SessionManager sessionManager = new SessionManager(LoginActivity.this);

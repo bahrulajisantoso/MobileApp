@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         // session
         SessionManager sessionManager = new SessionManager(MainActivity.this);
-        if (sessionManager.isLogin() == false) {
+        if (!sessionManager.isLogin()) {
             moveToLogin();
         }
 
