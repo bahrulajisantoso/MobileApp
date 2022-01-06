@@ -3,6 +3,7 @@ package com.example.mobileapp.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,6 +25,8 @@ import com.example.mobileapp.Model.ResponseRegister;
 import com.example.mobileapp.R;
 
 import java.util.Calendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,6 +40,38 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private TextView tvLogin;
     private Spinner spinJenisKel;
     private String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword;
+    private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,16}$";
+    //                    "(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,16}$";
+    private static final Pattern patternPass = Pattern.compile(PASSWORD_PATTERN);
+    private Matcher matcherPass;
+
+//    public static boolean
+//    isValidPassword(String password) {
+//
+//        // Regex to check valid password.
+//        String regex = "^(?=.*[0-9])"
+//                + "(?=.*[a-z])(?=.*[A-Z])"
+////                + "(?=.*[@#$%^&+=])"
+//                + "(?=\\S+$).{8,16}$";
+//
+//        // Compile the ReGex
+//        Pattern p = Pattern.compile(regex);
+//
+//        // If the password is empty
+//        // return false
+////        if (password == null) {
+////            return false;
+////        }
+//
+//        // Pattern class contains matcher() method
+//        // to find matching between given password
+//        // and regular expression.
+//        Matcher m = p.matcher(password);
+//
+//        // Return if the password
+//        // matched the ReGex
+//        return m.matches();
+//    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -118,40 +153,54 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnRegister:
-                nama = etNama.getText().toString();
-                email = etEmail.getText().toString();
+                nama = etNama.getText().toString().toLowerCase();
+                email = etEmail.getText().toString().toLowerCase();
                 noHp = etNoHp.getText().toString();
 //                nik = etNik.getText().toString();
 //                jenisKelamin = etJeniKel.getText().toString();
-//                jenisKelamin = etJeniKel.getText().toString();
                 tglLahir = etTglLahir.getText().toString();
                 alamat = etAlamat.getText().toString();
+
                 password = etPassword.getText().toString();
+                // validasi password
+                matcherPass = patternPass.matcher(password);
+//                isValidPassword(password);
+
                 konfirmPassword = etKonfirmPassword.getText().toString();
 
                 if (nama.trim().equals("")) {
                     etNama.setError("Nama harus diisi");
                 } else if (email.trim().equals("")) {
                     etEmail.setError("Email harus diisi");
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    etEmail.setError("Masukkan email yang valid");
                 } else if (noHp.trim().equals("")) {
                     etNoHp.setError("No handphone harus diisi");
+                } else if (noHp.trim().length() < 10 || noHp.trim().length() > 13) {
+                    etNoHp.setError("No handphone tidak valid");
+                } else if (!Patterns.PHONE.matcher(noHp).matches()) {
+                    etNoHp.setError("No handphone tidak valid");
 //                } else if (nik.trim().equals("")) {
 //                    etNik.setError("NIK harus diisi");
 //                } else if (jenisKelamin.trim().equals("")) {
 //                    etJeniKel.setError("Jenis kelamin harus diisi");
+                } else if (tglLahir.trim().equals("")) {
+                    etTglLahir.setError("Tanggal lahir harus diisi");
                 } else if (jenisKelamin.trim().equals("Pilih")) {
                     TextView errTv = (TextView) spinJenisKel.getSelectedView();
                     errTv.setError("Jenis kelamin harus diisi");
-                } else if (tglLahir.trim().equals("")) {
-                    etTglLahir.setError("Tanggal lahir harus diisi");
                 } else if (alamat.trim().equals("")) {
                     etAlamat.setError("Alamat harus diisi");
                 } else if (password.trim().equals("")) {
                     etPassword.setError("Password harus diisi");
+                } else if (password.trim().length() < 8 || password.trim().length() > 16) {
+                    etPassword.setError("Password min 8 karakter max 16 karakter");
+                } else if (!matcherPass.matches()) {
+                    etPassword.setError("Password harus berisi kombinasi huruf besar, huruf kecil, angka, dan tanpa spasi");
                 } else if (konfirmPassword.trim().equals("")) {
                     etKonfirmPassword.setError("konfirmasi password harus diisi");
-//                } else if (!konfirmPassword.trim().equals(password)) {
-//                    etKonfirmPassword.setError("Konfirmasi password tidak sesuai");
+                } else if (!konfirmPassword.trim().equals(password)) {
+                    etKonfirmPassword.setError("Konfirmasi password tidak sesuai");
                 } else {
                     register(nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword);
                 }
