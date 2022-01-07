@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="18dp"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="10dp"
+    app:strokeColor="@color/primary"
+    app:strokeWidth="1dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="10dp"
+
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,6 +23,7 @@
             android:id="@+id/txt_nama_wisata"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:fontFamily="@font/poppinsbold"
             android:text="Nama Wisata : Kawah Ijen"
             android:textColor="@color/blackfont" />
@@ -24,11 +32,12 @@
             android:id="@+id/txt_tgl_transaksi_tiket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:layout_marginTop="6dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="Tanggal Transaksi : 12-12-2022" />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
@@ -39,40 +48,125 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsmedium"
-                android:text="Jumlah tiket : 5" />
+                android:text="Jumlah tiket : 5"
+                android:textSize="15dp" />
+
 
             <TextView
                 android:id="@+id/txt_total_harga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:layout_alignParentRight="true"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="- Rp. 500000"
                 android:textColor="@color/blackfont" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
-            android:layout_marginTop="8dp"
+        <TextView
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="Bayar melalui :"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:fontFamily="@font/poppinsmedium"
+            />
+
+        <com.google.android.material.card.MaterialCardView
+          android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/primary"
+            app:cardCornerRadius="10dp"
+            android:layout_marginBottom="2dp"
+            >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/bca"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+
+                android:layout_centerVertical="true"
+                android:src="@drawable/bca" />
 
             <TextView
-                android:id="@+id/txt_status"
-                android:layout_width="wrap_content"
+                android:id="@+id/txt_no_rekening"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppinsbold"
-                android:text="Belum Dibayar"
-                android:textColor="@color/blackfont" />
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/bca"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="no rek"
+                android:textSize="15dp" />
+        </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- Tf Ke: 081208"
-                android:id="@+id/txt_no_rekening"
-                android:layout_marginLeft="8dp"
-                android:fontFamily="@font/poppinsmedium"/>
-        </LinearLayout>
+                android:layout_centerHorizontal="true"
+                android:text="atau"
+                android:textColor="@color/black"
+
+                />
+        </RelativeLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/primary"
+            app:cardCornerRadius="10dp"
+            android:layout_marginBottom="5dp"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/dana"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:padding="7dp"
+                    android:src="@drawable/dana" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/dana"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="0877-0165-2132"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txt_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsbold"
+            android:layout_marginTop="20dp"
+            android:textStyle="italic"
+            android:text="Belum Dibayar"
+            android:textColor="@color/red" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,12 +178,25 @@
             android:id="@+id/btn_hubungi"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="5dp"
+
             android:background="@drawable/button_tiket"
+            style="@style/btn_primary"
+            android:textSize="15dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="Hubungi Pengelola"
             android:textAllCaps="false"
             android:textColor="@color/white" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="hubungi pengelola jika sudah melakukan pembayaran"
+            android:fontFamily="@font/poppinsmedium"
+            android:textSize="12dp"
+            />
+
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

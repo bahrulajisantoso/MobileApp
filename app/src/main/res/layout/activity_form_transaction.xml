@@ -34,16 +34,18 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="720dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="70dp"
         android:background="@drawable/bg_gradasi"
+        android:layout_marginBottom="-25dp"
         android:orientation="vertical"
         android:paddingHorizontal="28dp"
         android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+
             android:layout_marginTop="16dp"
             android:orientation="vertical">
 
@@ -186,6 +188,7 @@
 
                     <Button
                         android:id="@+id/btn_tgl_transaksi"
+                        style="@style/btn_teal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/button_primary"
@@ -291,18 +294,24 @@
                     android:textSize="14dp" />
             </RelativeLayout>
 
-            <Button
-                android:id="@+id/btn_konfirmasi_pembayaran"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/button_primary"
-                android:fontFamily="@font/poppinsmedium"
-                android:text="Konfirmasi Pembayaran"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp">
+                <Button
+                    android:id="@+id/btn_konfirmasi_pembayaran"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/button_primary"
+                    style="@style/btn_teal"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Konfirmasi Pembayaran"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

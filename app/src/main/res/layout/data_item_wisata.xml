@@ -8,7 +8,7 @@
     android:layout_marginLeft="8dp"
     android:layout_marginTop="10dp"
     android:layout_marginRight="8dp"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="10dp"
     app:strokeColor="@color/grey"
     app:strokeWidth="1dp">
 
@@ -17,18 +17,22 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
 
-        <ImageView
-            android:id="@+id/tvGambar"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="5dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background"
-            android:text="Gambar Wisata"
-            android:textSize="20dp" />
-
+            <ImageView
+                android:id="@+id/tvGambar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_launcher_background"
+                android:text="Gambar Wisata"
+                android:textSize="20dp" />
+        </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvNamaWisata"
             android:layout_width="wrap_content"

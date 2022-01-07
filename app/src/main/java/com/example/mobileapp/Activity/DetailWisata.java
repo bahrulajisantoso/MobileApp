@@ -57,7 +57,7 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
         tvDeskripsi = findViewById(R.id.tvDeskripsi);
         Button btnPesanTiket = findViewById(R.id.btnPesanTiket);
         tvJumlahKuota = findViewById(R.id.tvJumlahKuota);
-        tvNoRekening = findViewById(R.id.tvNoRekening);
+
         tvNoHp = findViewById(R.id.tvNoHp);
 
 
@@ -122,8 +122,7 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
                 getIntent().hasExtra("HARGA_TIKET") &&
                 getIntent().hasExtra("DESKRIPSI") &&
                 getIntent().hasExtra("ID_WISATA") &&
-                getIntent().hasExtra("NO_REKENING") &&
-                getIntent().hasExtra("NO_HP") &&
+
                 getIntent().hasExtra("JUMLAH_KUOTA")) {
 
             gambarWisata = getIntent().getStringExtra("GAMBAR_WISATA");
@@ -134,19 +133,19 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
             String deskripsi = getIntent().getStringExtra("DESKRIPSI");
             int jumlahKuota = getIntent().getIntExtra("JUMLAH_KUOTA", 0);
             id_wisata = getIntent().getIntExtra("ID_WISATA", 0);
-            String no_rekening = getIntent().getStringExtra("NO_REKENING");
-            String no_hp = getIntent().getStringExtra("NO_HP");
+         //   String no_rekening = getIntent().getStringExtra("NO_REKENING");
+           // String no_hp = getIntent().getStringExtra("NO_HP");
 
             // load gambar
             Glide.with(DetailWisata.this).load(RetrofitClient.IMAGE_URL + gambarWisata).into(ivGambarWisata);
-            tvNamaWisata.setText(namaWisata);
+            tvNamaWisata.setText(namaWisata +",");
             tvKategori.setText(kategori);
-            tvNoRekening.setText(no_rekening);
+
             tvLokasi.setText(lokasi);
-            tvNoHp.setText(no_hp);
-            tvHargaTiket.setText(String.valueOf(hargaTiket));
+
+            tvHargaTiket.setText(String.valueOf("Rp. "+hargaTiket+"-,"));
             tvDeskripsi.setText(deskripsi);
-            tvJumlahKuota.setText("Kuota " + jumlahKuota + " -orang");
+            tvJumlahKuota.setText("Tiket Tersedia: " + jumlahKuota);
             System.out.println(id_wisata);
         }
     }

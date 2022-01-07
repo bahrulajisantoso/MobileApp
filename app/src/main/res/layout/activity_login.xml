@@ -114,7 +114,7 @@
             android:layout_marginLeft="26dp"
             android:layout_marginRight="26dp"
             android:layout_marginBottom="10dp"
-            android:backgroundTint="#00C1CD"
+            style="@style/btn_teal"
             android:text="Masuk"
             android:textSize="20dp" />
 

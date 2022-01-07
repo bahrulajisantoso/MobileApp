@@ -15,6 +15,7 @@
             android:id="@+id/btnKembali"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/ic_kembali" />
 
@@ -22,6 +23,7 @@
             android:id="@+id/kembali"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="18dp"
             android:layout_toRightOf="@+id/btnKembali"
             android:text="Pesan tiket"
@@ -29,113 +31,132 @@
             android:textSize="25dp"
             android:textStyle="bold" />
     </RelativeLayout>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="24dp"
         android:layout_marginTop="70dp"
+        android:layout_marginBottom="-25dp"
         android:background="@drawable/bg_gradasi"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/ivGambarDetail"
-            android:layout_width="match_parent"
-            android:layout_height="256dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@mipmap/ic_launcher" />
-
-        <TextView
-            android:layout_marginTop="24dp"
-            android:id="@+id/tvNamaWisataDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="Nama Wisata"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+        android:orientation="vertical"
+        android:paddingHorizontal="2dp"
+        android:scrollbars="none">
 
         <LinearLayout
-            android:layout_marginTop="18dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rp"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/tvHargaTiketDetail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:text="Harga Tiket"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvJumlahKuota"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5000 -orang"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/tvKategoriDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kategori"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/tvLokasiDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lokasi"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/tvNoRekening"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/tvNoHp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/tvDeskripsi"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:layout_marginRight="20dp"
-            android:text="Deskripsi"
-            android:textSize="16dp" />
+            android:layout_height="match_parent"
+            android:paddingHorizontal="20dp"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnPesanTiket"
-            android:textAllCaps="false"
-            android:paddingHorizontal="16dp"
-            android:background="@drawable/button_tiket"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/white"
-            android:fontFamily="@font/poppinsmedium"
-            android:layout_marginRight="20dp"
-            android:text="Pesan Tiket"
-            android:layout_marginEnd="20dp" />
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp">
 
-    </LinearLayout>
+                <ImageView
+                    android:id="@+id/ivGambarDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@mipmap/ic_launcher" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/tvNamaWisataDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="Nama Wisata"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/tvLokasiDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lokasi"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvKategoriDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori"
+                android:textSize="15dp" />
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+
+                <TextView
+                    android:id="@+id/tvHargaTiketDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+
+                    android:text="Harga Tiket"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvJumlahKuota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="5000 -orang"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/tvDeskripsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:text="Deskripsi"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnPesanTiket"
+                    style="@style/btn_teal"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="60dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Pesan Tiket"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

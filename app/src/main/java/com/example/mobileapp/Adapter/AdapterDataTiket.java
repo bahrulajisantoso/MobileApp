@@ -39,7 +39,7 @@ public class AdapterDataTiket extends RecyclerView.Adapter<AdapterDataTiket.Data
         holder.txt_jumlah_tiket.setText("Jumlah Tiket: " + list.get(position).getJumlah_tiket());
         holder.txt_total_harga.setText("Total Bayar: Rp." + list.get(position).getTotal_harga());
         holder.txt_status.setText(list.get(position).getStatus());
-        holder.txt_no_rekening.setText("- Tf Ke: " + list.get(position).getNo_rekening());
+        holder.txt_no_rekening.setText(list.get(position).getNo_rekening());
 
         holder.btn_hubungi.setOnClickListener(v -> {
             String no_hp = holder.txt_no_hp.getText().toString();
