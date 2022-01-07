@@ -27,6 +27,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="-25dp"
         android:background="@drawable/bg_gradasi"
         android:orientation="vertical">
 
@@ -63,6 +64,8 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/primary"
+            app:hintTextColor="@color/primary"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="20dp"
@@ -83,7 +86,9 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:hintTextColor="@color/primary"
             android:layout_marginLeft="30dp"
+            app:boxStrokeColor="@color/primary"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="18dp"
             android:hint="Password"
@@ -93,6 +98,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:fontFamily="@font/poppinsmedium"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
