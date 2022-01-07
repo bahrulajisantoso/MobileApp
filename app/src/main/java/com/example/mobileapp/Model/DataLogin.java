@@ -14,7 +14,7 @@ public class DataLogin {
     private String noHp;
 
     @SerializedName("id_user")
-    private int idUser;
+    private String idUser;
 
     @SerializedName("nama_user")
     private String namaUser;
@@ -58,11 +58,11 @@ public class DataLogin {
         return noHp;
     }
 
-    public void setIdUser(int idUser) {
+    public void setIdUser(String idUser) {
         this.idUser = idUser;
     }
 
-    public int getIdUser() {
+    public String getIdUser() {
         return idUser;
     }
 

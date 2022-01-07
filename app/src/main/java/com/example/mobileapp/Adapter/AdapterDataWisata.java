@@ -20,7 +20,7 @@ import com.example.mobileapp.R;
 
 import java.util.List;
 
-public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.HolderData> {
+public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.DataWisataViewHolder> {
     private Context ctx;
     private List<DataWisata> listWisata;
 
@@ -31,15 +31,15 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
 
     @NonNull
     @Override
-    public HolderData onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DataWisataViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.data_item_wisata, parent, false);
-        HolderData holder = new HolderData(view);
+        DataWisataViewHolder holder = new DataWisataViewHolder(view);
         return holder;
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HolderData holder, int position) {
+    public void onBindViewHolder(@NonNull DataWisataViewHolder holder, int position) {
         DataWisata dataWisata = listWisata.get(position);
 //        holder.tvId.setText(String.valueOf(DataItemWisata.getIdWisata()));
         holder.tvNamaWisata.setText(dataWisata.getNamaWisata());
@@ -48,38 +48,43 @@ public class AdapterDataWisata extends RecyclerView.Adapter<AdapterDataWisata.Ho
         holder.tvLokasi.setText(dataWisata.getLokasi());
 
         // load gambar
-        Glide.with(ctx).asBitmap().load(RetrofitClient.getImageUrl() + dataWisata.getGambar()).into(holder.ivGambar);
+        Glide.with(ctx).asBitmap().load(RetrofitClient.IMAGE_URL + dataWisata.getGambar()).into(holder.ivGambar);
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        holder.cardView.setOnClickListener(view -> {
 //                Toast.makeText(ctx, dataWisata.getNamaWisata(), Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(ctx, DetailWisata.class);
+            Intent intent = new Intent(ctx, DetailWisata.class);
 
-                intent.putExtra("GAMBAR_WISATA", dataWisata.getGambar());
-                intent.putExtra("NAMA_WISATA", dataWisata.getNamaWisata());
-                intent.putExtra("KATEGORI", dataWisata.getKategori());
-                intent.putExtra("LOKASI", dataWisata.getLokasi());
-                intent.putExtra("HARGA_TIKET", String.valueOf(dataWisata.getHargaTiket()));
-                intent.putExtra("DESKRIPSI", dataWisata.getDeskripsi());
+            intent.putExtra("GAMBAR_WISATA", dataWisata.getGambar());
+            intent.putExtra("NAMA_WISATA", dataWisata.getNamaWisata());
+            intent.putExtra("KATEGORI", dataWisata.getKategori());
+            intent.putExtra("LOKASI", dataWisata.getLokasi());
+            intent.putExtra("HARGA_TIKET", String.valueOf(dataWisata.getHargaTiket()));
+            intent.putExtra("DESKRIPSI", dataWisata.getDeskripsi());
+            intent.putExtra("JUMLAH_KUOTA", dataWisata.getJumlah_kuota());
+            intent.putExtra("ID_WISATA", dataWisata.getIdWisata());
+            intent.putExtra("NO_REKENING", dataWisata.getNo_rekening());
+            intent.putExtra("NO_HP", dataWisata.getNo_hp());
 
-                ctx.startActivity(intent);
-            }
+            ctx.startActivity(intent);
         });
     }
 
     @Override
     public int getItemCount() {
-        return listWisata.size();
+        if (listWisata == null) {
+            return 0;
+        } else {
+            return listWisata.size();
+        }
     }
 
-    public class HolderData extends RecyclerView.ViewHolder {
+    public class DataWisataViewHolder extends RecyclerView.ViewHolder {
         private TextView tvId, tvNamaWisata, tvKategori, tvDeskripsi, tvLokasi;
         private ImageView ivGambar;
         private CardView cardView;
 
-        public HolderData(@NonNull View itemView) {
+        public DataWisataViewHolder(@NonNull View itemView) {
             super(itemView);
 
 //            tvId = (TextView) itemView.findViewById(R.id.tvId);

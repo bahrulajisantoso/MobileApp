@@ -10,4 +10,8 @@
     <color name="grey">#DCDCDC</color>
     <color name="primary">#004AAD</color>
     <color name="red">#DB1514</color>
+    <color name="blackfont">#2a2a2a</color>
+    <color name="cyanblue">#00C1CD</color>
+    <color name="blue">#004AAD</color>
+    <color name="orange">#FF5000</color>
 </resources>

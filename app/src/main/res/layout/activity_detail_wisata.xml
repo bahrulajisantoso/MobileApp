@@ -15,7 +15,6 @@
             android:id="@+id/btnKembali"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/ic_kembali" />
 
@@ -23,7 +22,6 @@
             android:id="@+id/kembali"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="18dp"
             android:layout_toRightOf="@+id/btnKembali"
             android:text="Pesan tiket"
@@ -35,6 +33,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingHorizontal="24dp"
         android:layout_marginTop="70dp"
         android:background="@drawable/bg_gradasi"
         android:orientation="vertical">
@@ -44,14 +43,15 @@
             android:layout_width="match_parent"
             android:layout_height="256dp"
             android:layout_gravity="center"
-            android:layout_margin="20dp"
+            android:layout_marginTop="24dp"
+            android:scaleType="centerCrop"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <TextView
+            android:layout_marginTop="24dp"
             android:id="@+id/tvNamaWisataDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="Nama Wisata"
             android:textColor="@color/black"
@@ -59,9 +59,9 @@
             android:textStyle="bold" />
 
         <LinearLayout
+            android:layout_marginTop="18dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -76,14 +76,19 @@
                 android:paddingLeft="5dp"
                 android:text="Harga Tiket"
                 android:textSize="15dp" />
-
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvJumlahKuota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5000 -orang"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/tvKategoriDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:text="Kategori"
             android:textSize="15dp" />
 
@@ -91,28 +96,45 @@
             android:id="@+id/tvLokasiDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:text="Lokasi"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tvNoRekening"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tvNoHp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
             android:textSize="15dp" />
 
         <TextView
             android:id="@+id/tvDeskripsi"
             android:layout_width="match_parent"
             android:layout_height="110dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="Deskripsi"
             android:textSize="16dp" />
 
         <Button
             android:id="@+id/btnPesanTiket"
-            style="@style/btn_primary"
+            android:textAllCaps="false"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/button_tiket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinsmedium"
             android:layout_marginRight="20dp"
-            android:text="Pesan Tiket" />
+            android:text="Pesan Tiket"
+            android:layout_marginEnd="20dp" />
 
     </LinearLayout>
 

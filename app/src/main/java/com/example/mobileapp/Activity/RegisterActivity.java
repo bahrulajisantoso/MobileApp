@@ -39,39 +39,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private ImageButton btnPilihTglLahir;
     private TextView tvLogin;
     private Spinner spinJenisKel;
-    private String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword;
-    private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,16}$";
+    private String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword, kodeNegara;
+//    private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,16}$";
     //                    "(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,16}$";
-    private static final Pattern patternPass = Pattern.compile(PASSWORD_PATTERN);
-    private Matcher matcherPass;
-
-//    public static boolean
-//    isValidPassword(String password) {
-//
-//        // Regex to check valid password.
-//        String regex = "^(?=.*[0-9])"
-//                + "(?=.*[a-z])(?=.*[A-Z])"
-////                + "(?=.*[@#$%^&+=])"
-//                + "(?=\\S+$).{8,16}$";
-//
-//        // Compile the ReGex
-//        Pattern p = Pattern.compile(regex);
-//
-//        // If the password is empty
-//        // return false
-////        if (password == null) {
-////            return false;
-////        }
-//
-//        // Pattern class contains matcher() method
-//        // to find matching between given password
-//        // and regular expression.
-//        Matcher m = p.matcher(password);
-//
-//        // Return if the password
-//        // matched the ReGex
-//        return m.matches();
-//    }
+//    private static final Pattern patternPass = Pattern.compile(PASSWORD_PATTERN);
+//    private Matcher matcherPass;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -96,8 +68,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         btnPilihTglLahir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        RegisterActivity.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(RegisterActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                         month = month + 1;
@@ -155,7 +126,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btnRegister:
                 nama = etNama.getText().toString().toLowerCase();
                 email = etEmail.getText().toString().toLowerCase();
-                noHp = etNoHp.getText().toString();
+
+                kodeNegara = "+62";
+                noHp = kodeNegara + etNoHp.getText().toString();
 //                nik = etNik.getText().toString();
 //                jenisKelamin = etJeniKel.getText().toString();
                 tglLahir = etTglLahir.getText().toString();
@@ -163,20 +136,26 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                 password = etPassword.getText().toString();
                 // validasi password
-                matcherPass = patternPass.matcher(password);
+//                matcherPass = patternPass.matcher(password);
 //                isValidPassword(password);
 
                 konfirmPassword = etKonfirmPassword.getText().toString();
 
                 if (nama.trim().equals("")) {
                     etNama.setError("Nama harus diisi");
+                } else if (nama.trim().length() > 40) {
+                    etNama.setError("Max 40 karakter");
+
                 } else if (email.trim().equals("")) {
                     etEmail.setError("Email harus diisi");
+                } else if (email.trim().length() > 30) {
+                    etEmail.setError("Max 30 karakter");
                 } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     etEmail.setError("Masukkan email yang valid");
-                } else if (noHp.trim().equals("")) {
+
+                } else if (noHp.trim().equals("+62")) {
                     etNoHp.setError("No handphone harus diisi");
-                } else if (noHp.trim().length() < 10 || noHp.trim().length() > 13) {
+                } else if (noHp.trim().length() < 13 || noHp.trim().length() > 16) {
                     etNoHp.setError("No handphone tidak valid");
                 } else if (!Patterns.PHONE.matcher(noHp).matches()) {
                     etNoHp.setError("No handphone tidak valid");
@@ -184,19 +163,27 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 //                    etNik.setError("NIK harus diisi");
 //                } else if (jenisKelamin.trim().equals("")) {
 //                    etJeniKel.setError("Jenis kelamin harus diisi");
+
                 } else if (tglLahir.trim().equals("")) {
                     etTglLahir.setError("Tanggal lahir harus diisi");
+
                 } else if (jenisKelamin.trim().equals("Pilih")) {
                     TextView errTv = (TextView) spinJenisKel.getSelectedView();
                     errTv.setError("Jenis kelamin harus diisi");
+
                 } else if (alamat.trim().equals("")) {
                     etAlamat.setError("Alamat harus diisi");
+                } else if (alamat.trim().length() > 90) {
+                    etAlamat.setError("Max 90 karakter");
+
+
                 } else if (password.trim().equals("")) {
                     etPassword.setError("Password harus diisi");
                 } else if (password.trim().length() < 8 || password.trim().length() > 16) {
                     etPassword.setError("Password min 8 karakter max 16 karakter");
-                } else if (!matcherPass.matches()) {
+                } else if (!isValidPassword(password)) {
                     etPassword.setError("Password harus berisi kombinasi huruf besar, huruf kecil, angka, dan tanpa spasi");
+
                 } else if (konfirmPassword.trim().equals("")) {
                     etKonfirmPassword.setError("konfirmasi password harus diisi");
                 } else if (!konfirmPassword.trim().equals(password)) {
@@ -239,5 +226,33 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private static boolean isValidPassword(String password) {
+
+        // Regex to check valid password.
+        String regex = "^(?=.*[0-9])"
+                + "(?=.*[a-z])"
+//                "(?=.*[A-Z])"
+//                + "(?=.*[@#$%^&+=])"
+                + "(?=\\S+$).{8,16}$";
+
+        // Compile the ReGex
+        Pattern p = Pattern.compile(regex);
+
+        // If the password is empty
+        // return false
+//        if (password == null) {
+//            return false;
+//        }
+
+        // Pattern class contains matcher() method
+        // to find matching between given password
+        // and regular expression.
+        Matcher m = p.matcher(password);
+
+        // Return if the password
+        // matched the ReGex
+        return m.matches();
     }
 }

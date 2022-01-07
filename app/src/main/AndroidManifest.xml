@@ -14,6 +14,9 @@
         android:theme="@style/Theme.MobileApp">
 
         <activity
+            android:name=".Activity.FormTransaction"
+            android:exported="false" />
+        <activity
             android:name=".Activity.EditActivity"
             android:exported="false" />
         <activity

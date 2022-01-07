@@ -13,7 +13,7 @@
         android:title="Transaksi" />
 
     <item
-        android:id="@+id/nav_account"
+        android:id="@+id/nav_user"
         android:icon="@drawable/ic_user"
         android:title="Akun" />
 

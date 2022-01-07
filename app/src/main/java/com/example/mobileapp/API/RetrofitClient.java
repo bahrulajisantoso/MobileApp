@@ -5,10 +5,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String IP_ADDRES = "192.168.1.9";
+    private static final String IP_ADDRES = "192.168.1.5";
     //    private static final String IP_ADDRES = "192.168.0.102";
     private static final String BASE_URL = "http://" + IP_ADDRES + "/Web-Service/";
-    private static final String IMAGE_URL = "http://" + IP_ADDRES + "/Arah_Kita/Arah_Kita_Web/img/wisata/";
+    public static final String TRANSACTION = "http://" + IP_ADDRES + "/Web-Service/transaksi.php";
+    public static final String UPDATE_JUMLAH_TIKET = "http://" + IP_ADDRES + "/Web-Service/updatejumlahtiket.php";
+    public static final String IMAGE_URL = "http://" + IP_ADDRES + "/Arah_Kita/Arah_Kita_Web/img/wisata/";
     private static Retrofit retrofit;
 
     public static Retrofit getClient() {
@@ -20,9 +22,5 @@ public class RetrofitClient {
         }
 
         return retrofit;
-    }
-
-    public static String getImageUrl() {
-        return IMAGE_URL;
     }
 }

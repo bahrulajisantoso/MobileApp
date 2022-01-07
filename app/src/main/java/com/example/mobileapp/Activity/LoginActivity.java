@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,9 +26,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText etEmail, etPassword;
-    private Button btnLogin;
     private String email, password;
-    private TextView tvRegister;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,36 +38,33 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         etPassword = findViewById(R.id.etPassword);
 
         // button login
-        btnLogin = findViewById(R.id.btnLogin);
+        Button btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(LoginActivity.this);
 
 
         // text view register
-        tvRegister = findViewById(R.id.tvRegister);
+        TextView tvRegister = findViewById(R.id.tvRegister);
         tvRegister.setOnClickListener(LoginActivity.this);
 
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btnLogin:
-                email = etEmail.getText().toString();
-                password = etPassword.getText().toString();
+        int id = view.getId();
+        if (id == R.id.btnLogin) {
+            email = etEmail.getText().toString();
+            password = etPassword.getText().toString();
 
-                if (email.trim().equals("")) {
-                    etEmail.setError("Email harus diisi");
-                } else if (password.trim().equals("")) {
-                    etPassword.setError("Password harus diisi");
-                } else {
-                    login();
-                }
-                break;
-
-            case R.id.tvRegister:
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-                break;
+            if (email.trim().equals("")) {
+                etEmail.setError("Email harus diisi");
+            } else if (password.trim().equals("")) {
+                etPassword.setError("Password harus diisi");
+            } else {
+                login();
+            }
+        } else if (id == R.id.tvRegister) {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -79,27 +75,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Call<ResponseLogin> responseLoginCall = apiInterface.getLogin(email, password);
         responseLoginCall.enqueue(new Callback<ResponseLogin>() {
             @Override
-            public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
+            public void onResponse(@NonNull Call<ResponseLogin> call, @NonNull Response<ResponseLogin> response) {
                 if (response.body() != null && response.isSuccessful() && response.body().getKode() == 1) {
-
                     // session
                     SessionManager sessionManager = new SessionManager(LoginActivity.this);
                     DataLogin dataLogin = response.body().getData();
                     sessionManager.createLoginSession(dataLogin);
 
                     Toast.makeText(LoginActivity.this, response.body().getPesan(), Toast.LENGTH_SHORT).show();
-
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
 
                 } else {
+                    assert response.body() != null;
                     Toast.makeText(LoginActivity.this, response.body().getPesan(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<ResponseLogin> call, Throwable t) {
+            public void onFailure(@NonNull Call<ResponseLogin> call, @NonNull Throwable t) {
                 Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

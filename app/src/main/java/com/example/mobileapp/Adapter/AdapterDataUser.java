@@ -57,6 +57,7 @@
 //
 //                intent.putExtra("NAMA-USER", DataUser.getNamaUser());
 //                intent.putExtra("EMAIL", DataUser.getEmail());
+//                intent.putExtra("ID_USER", DataUser.getIdUser());
 //                intent.putExtra("NO-HP", DataUser.getNoHp());
 //                intent.putExtra("TGL-LAHIR", DataUser.getTglLahir());
 //                intent.putExtra("JENIS-KELAMIN", DataUser.getJenisKelamin());

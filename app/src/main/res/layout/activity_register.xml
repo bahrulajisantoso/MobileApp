@@ -32,9 +32,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
             android:hint="Nama"
-            app:counterEnabled="true">
+            app:counterEnabled="true"
+            app:counterTextColor="@color/primary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
@@ -43,7 +43,8 @@
                 android:drawableEnd="@drawable/ic_user"
                 android:drawableRight="@drawable/ic_user"
                 android:fontFamily="@font/poppinsmedium"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -53,9 +54,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
             android:hint="Email"
-            app:counterEnabled="true">
+            app:counterEnabled="true"
+            app:counterTextColor="@color/primary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
@@ -64,7 +65,8 @@
                 android:drawableEnd="@drawable/ic_email"
                 android:drawableRight="@drawable/ic_email"
                 android:fontFamily="@font/poppinsmedium"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textSize="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -74,9 +76,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
             android:hint="No Handphone"
-            app:counterEnabled="true">
+            app:counterEnabled="true"
+            app:counterTextColor="@color/primary"
+            app:prefixText="+62"
+            app:prefixTextColor="@color/primary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etNoHp"
@@ -85,7 +89,8 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_phone"
                 android:fontFamily="@font/poppinsmedium"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textSize="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--                <com.google.android.material.textfield.TextInputLayout-->
@@ -117,6 +122,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
                 android:hint="Tanggal Lahir">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -126,7 +132,8 @@
                     android:editable="false"
                     android:fontFamily="@font/poppinsmedium"
                     android:inputType="date"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -164,6 +171,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
                 android:hint="Jenis Kelamin">
 
@@ -174,7 +182,8 @@
                     android:editable="false"
                     android:fontFamily="@font/poppinsmedium"
                     android:inputType="text"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -202,9 +211,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
             android:hint="Alamat"
-            app:counterEnabled="true">
+            app:counterEnabled="true"
+            app:counterTextColor="@color/primary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAlamat"
@@ -212,7 +221,8 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_home"
                 android:fontFamily="@font/poppinsmedium"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -222,18 +232,21 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
             android:hint="Password min 8 karakter"
             app:counterEnabled="true"
-            app:helperText="Kombinasi huruf besar, huruf kecil, angka, dan tanpa spasi"
+            app:counterTextColor="@color/primary"
+            app:helperText="Kombinasi huruf besar dan angka, tanpa spasi"
+            app:helperTextTextColor="@color/primary"
             app:passwordToggleEnabled="true">
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsmedium"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textSize="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -251,17 +264,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsmedium"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textSize="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--        <ProgressBar-->
         <!--            android:id="@+id/progress"-->
         <!--            android:layout_width="wrap_content"-->
         <!--            android:layout_height="wrap_content"-->
-        <!--            android:visibility="gone"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutKonfirmPassword" />-->
+        <!--            android:visibility="visible" />-->
 
         <Button
             android:id="@+id/btnRegister"
