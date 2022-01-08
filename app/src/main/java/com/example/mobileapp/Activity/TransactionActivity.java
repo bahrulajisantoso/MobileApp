@@ -48,8 +48,6 @@ public class TransactionActivity extends AppCompatActivity {
             moveToLogin();
         }
 
-
-//        SessionManager sessionManager = new SessionManager(TransactionActivity.this);
         String email = sessionManager.getUserData().get(SessionManager.getEMAIL());
 
         getDataTiket(email);
@@ -71,14 +69,17 @@ public class TransactionActivity extends AppCompatActivity {
                     case R.id.nav_home:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         break;
 
                     case R.id.nav_transaction:
+                        finish();
                         break;
 
                     case R.id.nav_user:
                         startActivity(new Intent(getApplicationContext(), UserActivity.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         break;
                 }
                 return false;

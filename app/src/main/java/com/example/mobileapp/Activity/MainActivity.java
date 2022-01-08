@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,14 +53,14 @@ public class MainActivity extends AppCompatActivity {
         LayoutManager rvLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 //        rvLayoutManager = new GridLayoutManager(MainActivity.this, 2);
         rvWisata.setLayoutManager(rvLayoutManager);
-        readData();
+        tampilDataWisata();
     }
 
-    public void readData() {
+    public void tampilDataWisata() {
         ApiInterface apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
-        Call<ResponseWisata> tampilDataWisata = apiInterface.getWisata();
+        Call<ResponseWisata> tampilDataWisataCall = apiInterface.getWisata();
 
-        tampilDataWisata.enqueue(new Callback<ResponseWisata>() {
+        tampilDataWisataCall.enqueue(new Callback<ResponseWisata>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(@NonNull Call<ResponseWisata> call, @NonNull Response<ResponseWisata> response) {
@@ -84,51 +83,25 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
 
-//        bottomNavigationView.setOnItemSelectedListener(item -> {
-//
-////            int itemId = item.getItemId();
-////            if (itemId == R.id.nav_home) {
-////            } else if (itemId == R.id.nav_transaction) {
-////                startActivity(new Intent(getApplicationContext(), TransactionActivity.class));
-////                overridePendingTransition(0, 0);
-////            } else if (itemId == R.id.nav_account) {
-////                startActivity(new Intent(getApplicationContext(), UserActivity.class));
-////                overridePendingTransition(0, 0);
-////            }
-////            return false;
-//            switch (item.getItemId()) {
-//                case R.id.nav_home:
-//                    return false;
-//
-//                case R.id.nav_transaction:
-//                    startActivity(new Intent(getApplicationContext(), TransactionActivity.class));
-//                    overridePendingTransition(0, 0);
-//                    return true;
-//
-//                case R.id.nav_user:
-//                    startActivity(new Intent(getApplicationContext(), UserActivity.class));
-//                    overridePendingTransition(0, 0);
-//                    return true;
-//            }
-//            return false;
-//        });
-//    }
-
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
                     case R.id.nav_home:
+                        finish();
                         break;
 
                     case R.id.nav_transaction:
                         startActivity(new Intent(getApplicationContext(), TransactionActivity.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         break;
+
                     case R.id.nav_user:
                         startActivity(new Intent(getApplicationContext(), UserActivity.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         break;
                 }
                 return false;

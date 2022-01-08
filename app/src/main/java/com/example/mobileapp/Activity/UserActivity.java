@@ -96,20 +96,6 @@ public class UserActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_user);
 
-//        bottomNavigationView.setOnItemSelectedListener(item -> {
-
-//            int itemId = item.getItemId();
-//            if (itemId == R.id.nav_home) {
-//                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//                overridePendingTransition(0, 0);
-//                return true;
-//            } else if (itemId == R.id.nav_transaction) {
-//                startActivity(new Intent(getApplicationContext(), TransactionActivity.class));
-//                overridePendingTransition(0, 0);
-//                return true;
-//            } else {
-//                return itemId == R.id.nav_user;
-//            }
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -119,14 +105,17 @@ public class UserActivity extends AppCompatActivity {
                     case R.id.nav_home:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         break;
 
                     case R.id.nav_transaction:
                         startActivity(new Intent(getApplicationContext(), TransactionActivity.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         break;
 
                     case R.id.nav_user:
+                        finish();
                         break;
                 }
                 return false;

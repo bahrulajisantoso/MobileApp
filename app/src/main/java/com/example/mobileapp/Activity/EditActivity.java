@@ -147,6 +147,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnKembaliEdit:
                 Intent kembali = new Intent(this, UserActivity.class);
                 startActivity(kembali);
+                finish();
                 break;
 
         }
