@@ -4,16 +4,27 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.mobileapp.API.ApiInterface;
+import com.example.mobileapp.API.RetrofitClient;
+import com.example.mobileapp.Adapter.AdapterDataWisata;
+import com.example.mobileapp.Model.ResponseWisata;
 import com.example.mobileapp.R;
 import com.example.mobileapp.Session.SessionManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -47,6 +58,7 @@ public class UserActivity extends AppCompatActivity {
         ImageButton btnLogout = findViewById(R.id.btnLogout);
         TextView tvEdit = findViewById(R.id.tvEdit);
 
+        id_user = sessionManager.getUserData().get(SessionManager.getIDUser());
         nama = sessionManager.getUserData().get(SessionManager.getNAMA());
         email = sessionManager.getUserData().get(SessionManager.getEMAIL());
         noHp = sessionManager.getUserData().get(SessionManager.getNoHp());
@@ -61,7 +73,6 @@ public class UserActivity extends AppCompatActivity {
         tvTglLahir.setText(tglLahir);
         tvJenisKel.setText(jenisKel);
         tvAlamat.setText(alamat);
-
 
         // logout
         btnLogout.setOnClickListener(view -> new AlertDialog.Builder(UserActivity.this)
@@ -122,7 +133,6 @@ public class UserActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void moveToLogin() {
         Intent intent = new Intent(UserActivity.this, LoginActivity.class);

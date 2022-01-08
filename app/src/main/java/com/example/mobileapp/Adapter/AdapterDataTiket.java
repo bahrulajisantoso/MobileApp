@@ -27,7 +27,7 @@ public class AdapterDataTiket extends RecyclerView.Adapter<AdapterDataTiket.Data
     @NonNull
     @Override
     public DataTiketViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.data_tiket_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.data_item_tiket, parent, false);
         return new DataTiketViewHolder(view);
     }
 

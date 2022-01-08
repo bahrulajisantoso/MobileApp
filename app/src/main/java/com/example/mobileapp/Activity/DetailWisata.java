@@ -39,6 +39,7 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
     private String hargaTiket;
     private int id_wisata;
     private ImageView ivGambarWisata;
+    Button btnPesanTiket;
     private String id_user;
 
     public String nama_user, no_hp, new_email;
@@ -55,7 +56,7 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
         tvLokasi = findViewById(R.id.tvLokasiDetail);
         tvHargaTiket = findViewById(R.id.tvHargaTiketDetail);
         tvDeskripsi = findViewById(R.id.tvDeskripsi);
-        Button btnPesanTiket = findViewById(R.id.btnPesanTiket);
+        btnPesanTiket = findViewById(R.id.btnPesanTiket);
         tvJumlahKuota = findViewById(R.id.tvJumlahKuota);
 
         tvNoHp = findViewById(R.id.tvNoHp);
@@ -133,17 +134,17 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
             String deskripsi = getIntent().getStringExtra("DESKRIPSI");
             int jumlahKuota = getIntent().getIntExtra("JUMLAH_KUOTA", 0);
             id_wisata = getIntent().getIntExtra("ID_WISATA", 0);
-         //   String no_rekening = getIntent().getStringExtra("NO_REKENING");
-           // String no_hp = getIntent().getStringExtra("NO_HP");
+            //   String no_rekening = getIntent().getStringExtra("NO_REKENING");
+            // String no_hp = getIntent().getStringExtra("NO_HP");
 
             // load gambar
             Glide.with(DetailWisata.this).load(RetrofitClient.IMAGE_URL + gambarWisata).into(ivGambarWisata);
-            tvNamaWisata.setText(namaWisata +",");
+            tvNamaWisata.setText(namaWisata + ",");
             tvKategori.setText(kategori);
 
             tvLokasi.setText(lokasi);
 
-            tvHargaTiket.setText(String.valueOf("Rp. "+hargaTiket+"-,"));
+            tvHargaTiket.setText(String.valueOf("Rp. " + hargaTiket + "-,"));
             tvDeskripsi.setText(deskripsi);
             tvJumlahKuota.setText("Tiket Tersedia: " + jumlahKuota);
             System.out.println(id_wisata);

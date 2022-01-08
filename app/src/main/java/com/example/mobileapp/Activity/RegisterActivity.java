@@ -132,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 //                nik = etNik.getText().toString();
 //                jenisKelamin = etJeniKel.getText().toString();
                 tglLahir = etTglLahir.getText().toString();
-                alamat = etAlamat.getText().toString();
+                alamat = etAlamat.getText().toString().toLowerCase();
 
                 password = etPassword.getText().toString();
                 // validasi password

@@ -4,7 +4,7 @@ import com.example.mobileapp.Model.DataTiketModel;
 import com.example.mobileapp.Model.ResponseLogin;
 import com.example.mobileapp.Model.ResponseRegister;
 import com.example.mobileapp.Model.ResponseTransaction;
-import com.example.mobileapp.Model.ResponseUser;
+import com.example.mobileapp.Model.ResponseUpdateUser;
 import com.example.mobileapp.Model.ResponseWisata;
 import com.example.mobileapp.Model.UserModel;
 
@@ -59,18 +59,19 @@ public interface ApiInterface {
 
     // update user
     @FormUrlEncoded
-    @POST("update.php")
-    Call<ResponseRegister> updateUser(
+    @POST("update_user.php")
+    Call<ResponseUpdateUser> updateUser(
+            @Field("id_user") String idUser,
             @Field("nama_user") String nama,
             @Field("email") String email,
             @Field("no_hp") String nomerhp,
             @Field("tgl_lahir") String tgl_lahir,
             @Field("jenis_kelamin") String jenis_kelamin,
-            @Field("alamat") String alamat,
-            @Field("password") String password
+            @Field("alamat") String alamat
+//            @Field("password") String password
     );
 
-
+    // transaksi
     @FormUrlEncoded
     @POST("transaksi.php")
     Call<ResponseTransaction> addNewTransaction(
