@@ -182,7 +182,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 } else if (password.trim().length() < 8 || password.trim().length() > 16) {
                     etPassword.setError("Password min 8 karakter max 16 karakter");
                 } else if (!isValidPassword(password)) {
-                    etPassword.setError("Password harus berisi kombinasi huruf besar, huruf kecil, angka, dan tanpa spasi");
+                    etPassword.setError("Password harus berisi kombinasi huruf dan angka, tanpa spasi");
 
                 } else if (konfirmPassword.trim().equals("")) {
                     etKonfirmPassword.setError("konfirmasi password harus diisi");

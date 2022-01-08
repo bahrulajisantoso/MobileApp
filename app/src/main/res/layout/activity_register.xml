@@ -263,7 +263,7 @@
             app:hintTextColor="@color/primary"
             app:boxStrokeColor="@color/primary"
             app:counterTextColor="@color/primary"
-            app:helperText="Kombinasi huruf besar dan angka, tanpa spasi"
+            app:helperText="Kombinasi huruf dan angka, tanpa spasi"
             app:helperTextTextColor="@color/primary"
             app:passwordToggleEnabled="true">
 
