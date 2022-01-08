@@ -20,6 +20,16 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/txt_no_transaksi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="no transaksi"
+            android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/primary"
+            />
+
+        <TextView
             android:id="@+id/txt_nama_wisata"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
