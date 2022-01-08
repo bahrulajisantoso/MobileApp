@@ -40,11 +40,12 @@ public class AdapterDataTiket extends RecyclerView.Adapter<AdapterDataTiket.Data
         holder.txt_total_harga.setText("Total Bayar: Rp." + list.get(position).getTotal_harga());
         holder.txt_status.setText(list.get(position).getStatus());
         holder.txt_no_rekening.setText(list.get(position).getNo_rekening());
-
+       holder.txt_no_transaksi.setText("No Transaksi: "+list.get(position).getId_transaksi());
         holder.btn_hubungi.setOnClickListener(v -> {
             String no_hp = holder.txt_no_hp.getText().toString();
             String phone_number = no_hp.replaceFirst("0", "+62");
-            String message = "Saya%20ingin%20mengkonfirmasi%20pembayaran%20tiket%20dengan%20tujuan%20wisata%20%3a%20" + holder.txt_nama_wisata.getText().toString() + ".%0aBerikut%20bukti%20pembayaran%3a";
+            String message = "Saya ingin mengkonfirmasi pembayaran tiket dengan tujuan wisata%3A                                                                                                                "+ holder.txt_no_transaksi.getText().toString() +" ," +
+                    " "+ holder.txt_nama_wisata.getText().toString() + ".%0aBerikut%20bukti%20pembayaran%3a";
             System.out.println(phone_number);
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=" + phone_number +
                     "&text=" + message));
@@ -59,7 +60,7 @@ public class AdapterDataTiket extends RecyclerView.Adapter<AdapterDataTiket.Data
 
     public static class DataTiketViewHolder extends RecyclerView.ViewHolder {
         private TextView txt_nama_wisata, txt_tgl_transaksi_tiket, txt_jumlah_tiket, txt_total_harga, txt_status,
-                txt_no_rekening, txt_no_hp;
+                txt_no_rekening, txt_no_hp,txt_no_transaksi;
 
         private Button btn_hubungi;
 
@@ -73,6 +74,7 @@ public class AdapterDataTiket extends RecyclerView.Adapter<AdapterDataTiket.Data
             txt_status = itemView.findViewById(R.id.txt_status);
             txt_no_rekening = itemView.findViewById(R.id.txt_no_rekening);
             txt_no_hp = itemView.findViewById(R.id.txt_no_hp);
+            txt_no_transaksi =itemView.findViewById(R.id.txt_no_transaksi);
         }
     }
 }
