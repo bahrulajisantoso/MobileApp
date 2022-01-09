@@ -5,16 +5,18 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title=""
+
+        />
 
     <item
         android:id="@+id/nav_transaction"
         android:icon="@drawable/ic_arrow"
-        android:title="Transaksi" />
+        android:title="" />
 
     <item
         android:id="@+id/nav_user"
         android:icon="@drawable/ic_user"
-        android:title="Akun" />
+        android:title="" />
 
 </menu>
