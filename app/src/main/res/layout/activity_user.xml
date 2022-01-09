@@ -11,12 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/bottom_navigation" />
 
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/rvUser"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        tools:listitem="@layout/data_item_user" />-->
-
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -84,6 +78,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Nama"
+                android:textColor="@color/font"
                 android:textSize="15dp" />
 
             <TextView
@@ -103,6 +98,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Email"
+                android:textColor="@color/font"
                 android:textSize="15dp" />
 
             <TextView
@@ -122,6 +118,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="No HP"
+                android:textColor="@color/font"
                 android:textSize="15dp" />
 
             <TextView
@@ -141,6 +138,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Tanggal Lahir"
+                android:textColor="@color/font"
                 android:textSize="15dp" />
 
             <TextView
@@ -160,6 +158,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Jenis kelamin"
+                android:textColor="@color/font"
                 android:textSize="15dp" />
 
             <TextView
@@ -178,6 +177,7 @@
                 android:background="@drawable/field"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Alamat"
+                android:textColor="@color/font"
                 android:textSize="15dp" />
 
         </LinearLayout>

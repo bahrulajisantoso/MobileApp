@@ -4,113 +4,47 @@ import com.google.gson.annotations.SerializedName;
 
 public class DataUser {
 
-	@SerializedName("nik")
-	private String nik;
+    @SerializedName("id_user")
+    private String idUser;
 
-	@SerializedName("password")
-	private String password;
+    @SerializedName("nama_user")
+    private String namaUser;
 
-	@SerializedName("no_hp")
-	private String noHp;
+    @SerializedName("email")
+    private String email;
 
-	@SerializedName("id_user")
-	private String idUser;
+    @SerializedName("no_hp")
+    private String noHp;
 
-	@SerializedName("nama_user")
-	private String namaUser;
+    public String getIdUser() {
+        return idUser;
+    }
 
-	@SerializedName("jenis_kelamin")
-	private String jenisKelamin;
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
+    }
 
-	@SerializedName("gambar")
-	private String gambar;
+    public String getNamaUser() {
+        return namaUser;
+    }
 
-	@SerializedName("email")
-	private String email;
+    public void setNamaUser(String namaUser) {
+        this.namaUser = namaUser;
+    }
 
-	@SerializedName("tgl_lahir")
-	private String tglLahir;
+    public String getEmail() {
+        return email;
+    }
 
-	@SerializedName("alamat")
-	private String alamat;
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setNik(String nik){
-		this.nik = nik;
-	}
+    public String getNoHp() {
+        return noHp;
+    }
 
-	public String getNik(){
-		return nik;
-	}
-
-	public void setPassword(String password){
-		this.password = password;
-	}
-
-	public String getPassword(){
-		return password;
-	}
-
-	public void setNoHp(String noHp){
-		this.noHp = noHp;
-	}
-
-	public String getNoHp(){
-		return noHp;
-	}
-
-	public void setIdUser(String idUser){
-		this.idUser = idUser;
-	}
-
-	public String getIdUser(){
-		return idUser;
-	}
-
-	public void setNamaUser(String namaUser){
-		this.namaUser = namaUser;
-	}
-
-	public String getNamaUser(){
-		return namaUser;
-	}
-
-	public void setJenisKelamin(String jenisKelamin){
-		this.jenisKelamin = jenisKelamin;
-	}
-
-	public String getJenisKelamin(){
-		return jenisKelamin;
-	}
-
-	public void setGambar(String gambar){
-		this.gambar = gambar;
-	}
-
-	public String getGambar(){
-		return gambar;
-	}
-
-	public void setEmail(String email){
-		this.email = email;
-	}
-
-	public String getEmail(){
-		return email;
-	}
-
-	public void setTglLahir(String tglLahir){
-		this.tglLahir = tglLahir;
-	}
-
-	public String getTglLahir(){
-		return tglLahir;
-	}
-
-	public void setAlamat(String alamat){
-		this.alamat = alamat;
-	}
-
-	public String getAlamat(){
-		return alamat;
-	}
+    public void setNoHp(String noHp) {
+        this.noHp = noHp;
+    }
 }

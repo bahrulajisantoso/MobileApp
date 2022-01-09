@@ -75,7 +75,6 @@ public class SessionManager {
         return EMAIL;
     }
 
-
     public static String getNoHp() {
         return NO_HP;
     }

@@ -6,7 +6,7 @@ import com.example.mobileapp.Model.ResponseRegister;
 import com.example.mobileapp.Model.ResponseTransaction;
 import com.example.mobileapp.Model.ResponseUpdateUser;
 import com.example.mobileapp.Model.ResponseWisata;
-import com.example.mobileapp.Model.UserModel;
+import com.example.mobileapp.Model.DataUser;
 
 import java.util.List;
 
@@ -17,11 +17,6 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiInterface {
-
-
-    // tampil user
-//    @GET("user.php")
-//    Call<ResponseUser> getUser();
 
     // login
     @FormUrlEncoded
@@ -49,7 +44,7 @@ public interface ApiInterface {
     // getDataUser
     @FormUrlEncoded
     @POST("datauser.php")
-    Call<UserModel> getDataUserByID(
+    Call<DataUser> getDataUserByID(
             @Field("email") String email);
 
 

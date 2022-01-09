@@ -40,10 +40,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private TextView tvLogin;
     private Spinner spinJenisKel;
     private String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword, kodeNegara;
-//    private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,16}$";
-    //                    "(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,16}$";
-//    private static final Pattern patternPass = Pattern.compile(PASSWORD_PATTERN);
-//    private Matcher matcherPass;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -129,15 +125,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                 kodeNegara = "+62";
                 noHp = kodeNegara + etNoHp.getText().toString();
-//                nik = etNik.getText().toString();
-//                jenisKelamin = etJeniKel.getText().toString();
                 tglLahir = etTglLahir.getText().toString();
                 alamat = etAlamat.getText().toString().toLowerCase();
 
                 password = etPassword.getText().toString();
-                // validasi password
-//                matcherPass = patternPass.matcher(password);
-//                isValidPassword(password);
 
                 konfirmPassword = etKonfirmPassword.getText().toString();
 
@@ -155,14 +146,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                 } else if (noHp.trim().equals("+62")) {
                     etNoHp.setError("No handphone harus diisi");
-                } else if (noHp.trim().length() < 13 || noHp.trim().length() > 16) {
+                } else if (noHp.trim().length() < 11 || noHp.trim().length() > 14) {
                     etNoHp.setError("No handphone tidak valid");
                 } else if (!Patterns.PHONE.matcher(noHp).matches()) {
                     etNoHp.setError("No handphone tidak valid");
-//                } else if (nik.trim().equals("")) {
-//                    etNik.setError("NIK harus diisi");
-//                } else if (jenisKelamin.trim().equals("")) {
-//                    etJeniKel.setError("Jenis kelamin harus diisi");
 
                 } else if (tglLahir.trim().equals("")) {
                     etTglLahir.setError("Tanggal lahir harus diisi");
@@ -242,17 +229,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         // If the password is empty
         // return false
-//        if (password == null) {
-//            return false;
-//        }
-
-        // Pattern class contains matcher() method
-        // to find matching between given password
-        // and regular expression.
+        if (password == null) {
+            return false;
+        }
         Matcher m = p.matcher(password);
 
-        // Return if the password
-        // matched the ReGex
         return m.matches();
     }
 }

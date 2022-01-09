@@ -117,11 +117,19 @@ public class FormTransaction extends AppCompatActivity {
 
         btn_konfirmasi_pembayaran.setOnClickListener(v -> {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, RetrofitClient.TRANSACTION,
-                    response -> updateJumlahTiket(id_wisata, String.valueOf(jumlah_tiket)),
-                    error -> System.out.println(error.getMessage())) {
+                    response -> {
+                        if (jumlah_tiket != 0) {
+                            updateJumlahTiket(id_wisata, String.valueOf(jumlah_tiket));
+                        }
+                    },
+                    error -> Toast.makeText(getApplicationContext(), "Jumlah tiket tidak boleh null!", Toast.LENGTH_SHORT).show()) {
+
                 @NonNull
                 @Override
                 protected Map<String, String> getParams() {
+                    if (jumlah_tiket == 0) {
+                        Toast.makeText(getApplicationContext(), "Jumlah tiket tidak boleh null!", Toast.LENGTH_SHORT).show();
+                    }
                     tgl_transaksi = txt_tgl_transaksi.getText().toString();
                     Map<String, String> map = new HashMap<>();
                     map.put("id_wisata", id_wisata);

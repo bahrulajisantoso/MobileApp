@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileapp.API.ApiInterface;
@@ -28,8 +29,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class EditActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText etNama, etEmail, tvNik, etNoHp, etTglLahir, etJenisKel, etAlamat;
-    private String idUser, nama, email, nik, noHp, tglLahir, jenisKel, alamat;
+    private EditText etNama, etEmail, etNoHp, etTglLahir, etJenisKel, etAlamat;
+    private String idUser, nama, email, noHp, tglLahir, jenisKel, alamat;
     private ImageButton btnKembali, btnPilihTglLahir;
     private Button btnEditUser;
     private SessionManager sessionManager;
@@ -48,7 +49,6 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         // bind
         etNama = findViewById(R.id.eNama);
         etEmail = findViewById(R.id.eEmail);
-        //tvNik = findViewById(R.id.eNik);
         etNoHp = findViewById(R.id.eNoHp);
         etTglLahir = findViewById(R.id.eTglLahir);
         etJenisKel = findViewById(R.id.eJenisKel);
@@ -87,7 +87,6 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         idUser = sessionManager.getUserData().get(SessionManager.getIDUser());
         nama = sessionManager.getUserData().get(SessionManager.getNAMA());
         email = sessionManager.getUserData().get(SessionManager.getEMAIL());
-//        nik = sessionManager.getUserData().get(SessionManager.getNIK());
         noHp = sessionManager.getUserData().get(SessionManager.getNoHp());
         tglLahir = sessionManager.getUserData().get(SessionManager.getTanggalLahir());
         jenisKel = sessionManager.getUserData().get(SessionManager.getJenisKelamin());
@@ -95,61 +94,70 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
 
         etNama.setText(nama);
         etEmail.setText(email);
-//        tvNik.setText(nik);
         etNoHp.setText(noHp);
         etTglLahir.setText(tglLahir);
         etJenisKel.setText(jenisKel);
         etAlamat.setText(alamat);
     }
 
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnEditUser:
-                nama = etNama.getText().toString().toLowerCase();
-                email = etEmail.getText().toString().toLowerCase();
-                noHp = etNoHp.getText().toString();
-                tglLahir = etTglLahir.getText().toString();
-                jenisKel = etJenisKel.getText().toString().toLowerCase();
-                alamat = etAlamat.getText().toString().toLowerCase();
 
-                if (nama.trim().equals("Nama harus diisi")) {
-                } else if (nama.trim().length() > 40) {
-                    etJenisKel.setError("Max 40 karakter");
+                new AlertDialog.Builder(EditActivity.this)
+                        .setTitle("Apakah anda ingin mengubah data?")
+                        .setMessage("Ingin mengubah data profil anda?")
+                        .setPositiveButton("TIDAK", (dialog, which) -> dialog.cancel())
+                        .setNegativeButton("YA", (dialog, which) -> {
+                            dialog.cancel();
 
-                } else if (email.trim().equals("")) {
-                    etEmail.setError("Email harus diisi");
-                } else if (email.trim().length() > 30) {
-                    etEmail.setError("Max 30 karakter");
-                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    etEmail.setError("Masukkan email yang valid");
+                            nama = etNama.getText().toString().toLowerCase();
+                            email = etEmail.getText().toString().toLowerCase();
+                            noHp = etNoHp.getText().toString();
+                            tglLahir = etTglLahir.getText().toString();
+                            jenisKel = etJenisKel.getText().toString().toLowerCase();
+                            alamat = etAlamat.getText().toString().toLowerCase();
 
-                } else if (noHp.trim().equals("")) {
-                    etNoHp.setError("No handphone harus diisi");
-                } else if (noHp.trim().length() < 10 || noHp.trim().length() > 13) {
-                    etNoHp.setError("No handphone tidak valid");
-                } else if (!Patterns.PHONE.matcher(noHp).matches()) {
-                    etNoHp.setError("No handphone tidak valid");
+                            if (nama.trim().equals("Nama harus diisi")) {
+                            } else if (nama.trim().length() > 40) {
+                                etJenisKel.setError("Max 40 karakter");
 
-                } else if (tglLahir.trim().equals("")) {
-                    etTglLahir.setError("Tanggal lahir harus diisi");
+                            } else if (email.trim().equals("")) {
+                                etEmail.setError("Email harus diisi");
+                            } else if (email.trim().length() > 30) {
+                                etEmail.setError("Max 30 karakter");
+                            } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                                etEmail.setError("Masukkan email yang valid");
 
-                } else if (jenisKel.trim().equals("")) {
-                    etTglLahir.setError("Jenis kelamin harus diisi");
+                            } else if (noHp.trim().equals("")) {
+                                etNoHp.setError("No handphone harus diisi");
+                            } else if (noHp.trim().length() < 10 || noHp.trim().length() > 13) {
+                                etNoHp.setError("No handphone tidak valid");
+                            } else if (!Patterns.PHONE.matcher(noHp).matches()) {
+                                etNoHp.setError("No handphone tidak valid");
 
-                } else if (alamat.trim().equals("")) {
-                    etTglLahir.setError("Alamat harus diisi");
-                } else if (alamat.trim().length() > 90) {
-                    etTglLahir.setError("Max 90 karakter");
-                } else {
-                    UpdateUser(idUser, nama, email, noHp, tglLahir, jenisKel, alamat);
-                }
+                            } else if (tglLahir.trim().equals("")) {
+                                etTglLahir.setError("Tanggal lahir harus diisi");
+
+                            } else if (jenisKel.trim().equals("")) {
+                                etTglLahir.setError("Jenis kelamin harus diisi");
+
+                            } else if (alamat.trim().equals("")) {
+                                etTglLahir.setError("Alamat harus diisi");
+                            } else if (alamat.trim().length() > 90) {
+                                etTglLahir.setError("Max 90 karakter");
+                            } else {
+                                UpdateUser(idUser, nama, email, noHp, tglLahir, jenisKel, alamat);
+                            }
+                        }).show();
+                break;
             case R.id.btnKembaliEdit:
                 Intent kembali = new Intent(this, UserActivity.class);
                 startActivity(kembali);
                 finish();
                 break;
-
         }
     }
 
@@ -165,10 +173,6 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                     sessionManager.logoutSession();
                     moveToLogin();
                     finish();
-
-//                    Intent intent = new Intent(EditActivity.this, UserActivity.class);
-//                    startActivity(intent);
-//                    finish();
 
                 } else {
                     Toast.makeText(EditActivity.this, response.body().getPesan(), Toast.LENGTH_SHORT).show();

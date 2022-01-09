@@ -89,7 +89,6 @@ public class UserActivity extends AppCompatActivity {
         tvEdit.setOnClickListener(view -> {
             Intent intent = new Intent(UserActivity.this, EditActivity.class);
             startActivity(intent);
-            finish();
         });
 
         // bottom navigation

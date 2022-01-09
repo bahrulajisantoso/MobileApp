@@ -31,6 +31,7 @@
             android:textSize="25dp"
             android:textStyle="bold" />
     </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,14 +45,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
 
             <androidx.cardview.widget.CardView
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="0dp">
 
@@ -69,11 +70,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp">
+
                 <TextView
-                    android:layout_marginTop="20dp"
                     android:id="@+id/tvNamaWisataDetail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="5dp"
                     android:text="Nama Wisata"
                     android:textColor="@color/black"
@@ -81,10 +83,10 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_marginTop="20dp"
                     android:id="@+id/tvLokasiDetail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:text="Lokasi"
                     android:textColor="@color/black"
                     android:textSize="20dp"
@@ -97,11 +99,11 @@
                 android:layout_height="wrap_content"
                 android:text="Kategori"
                 android:textSize="15dp" />
-            <RelativeLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
 
 
                 <TextView

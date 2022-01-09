@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.example.mobileapp.API.ApiInterface;
 import com.example.mobileapp.API.RetrofitClient;
-import com.example.mobileapp.Model.UserModel;
+import com.example.mobileapp.Model.DataUser;
 import com.example.mobileapp.R;
 import com.example.mobileapp.Session.SessionManager;
 
@@ -84,29 +84,29 @@ public class DetailWisata extends AppCompatActivity implements View.OnClickListe
 
         SessionManager sessionManager = new SessionManager(DetailWisata.this);
         String email = sessionManager.getUserData().get(SessionManager.getEMAIL());
-        Toast.makeText(getApplicationContext(), email, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(), email, Toast.LENGTH_SHORT).show();
         getDataUser(email);
     }
 
     private void getDataUser(String email) {
         ApiInterface apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
-        Call<UserModel> userModelCall = apiInterface.getDataUserByID(email);
-        userModelCall.enqueue(new Callback<UserModel>() {
+        Call<DataUser> dataUserCall = apiInterface.getDataUserByID(email);
+        dataUserCall.enqueue(new Callback<DataUser>() {
             @Override
-            public void onResponse(@NonNull Call<UserModel> call, @NonNull Response<UserModel> response) {
+            public void onResponse(@NonNull Call<DataUser> call, @NonNull Response<DataUser> response) {
                 if (response.isSuccessful()) {
-                    UserModel userModel = response.body();
-                    assert userModel != null;
-                    id_user = userModel.getId_user();
-                    nama_user = userModel.getNama_user();
-                    new_email = userModel.getEmail();
-                    no_hp = userModel.getNo_hp();
+                    DataUser dataUser = response.body();
+                    assert dataUser != null;
+                    id_user = dataUser.getIdUser();
+                    nama_user = dataUser.getNamaUser();
+                    new_email = dataUser.getEmail();
+                    no_hp = dataUser.getNoHp();
                     System.out.println(id_user + " " + nama_user + " " + email + " " + no_hp);
                 }
             }
 
             @Override
-            public void onFailure(@NonNull Call<UserModel> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<DataUser> call, @NonNull Throwable t) {
 
             }
         });
