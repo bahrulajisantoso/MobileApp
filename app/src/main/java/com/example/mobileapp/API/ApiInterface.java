@@ -33,7 +33,6 @@ public interface ApiInterface {
             @Field("nama_user") String nama,
             @Field("email") String email,
             @Field("no_hp") String noHp,
-//            @Field("nik") String nik,
             @Field("jenis_kelamin") String jenisKelamin,
             @Field("tgl_lahir") String tglLahir,
             @Field("alamat") String alamat,

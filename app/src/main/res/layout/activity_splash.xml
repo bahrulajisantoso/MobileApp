@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".SplashScreen"
-    android:id="@+id/splash_screen"
-    >
+    tools:context=".UI.SplashScreen">
 
     <ImageView
         android:id="@+id/logosplash"
@@ -15,26 +14,27 @@
         android:layout_centerInParent="true"
         android:backgroundTint="#FFFFFF"
         android:src="@drawable/logo2" />
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="30dp"
-    android:layout_below="@+id/logosplash"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="200dp">
 
-    <ImageView
-        android:id="@+id/copyright"
-        android:layout_width="10dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_copyright_24" />
-
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/copyright"
-        android:fontFamily="@font/poppinsmedium"
-        android:text="arahkita.id 2021"
-        android:textColor="@color/primary" />
-</RelativeLayout>
+        android:layout_height="30dp"
+        android:layout_below="@+id/logosplash"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp">
+
+        <ImageView
+            android:id="@+id/copyright"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_copyright_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/copyright"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="arahkita.id 2021"
+            android:textColor="@color/primary" />
+    </RelativeLayout>
 </RelativeLayout>

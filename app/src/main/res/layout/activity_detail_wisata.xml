@@ -61,7 +61,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-
                     android:scaleType="centerCrop"
                     app:srcCompat="@mipmap/ic_launcher" />
             </androidx.cardview.widget.CardView>
@@ -111,7 +110,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="100dp"
-
                     android:text="Harga Tiket"
                     android:textSize="15dp" />
 
@@ -157,6 +155,7 @@
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="18dp" />
+
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical">
+
         <androidx.cardview.widget.CardView
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -27,12 +28,13 @@
                 android:id="@+id/tvGambar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
                 android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
                 android:text="Gambar Wisata"
                 android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
+
         <TextView
             android:id="@+id/tvNamaWisata"
             android:layout_width="wrap_content"
@@ -52,13 +54,6 @@
             android:layout_marginTop="25dp"
             android:text="Kategori Wisata"
             android:textSize="15dp" />
-
-        <!--            <TextView-->
-        <!--                android:id="@+id/tvDeskripsi"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:text="Deskripsi Wisata"-->
-        <!--                android:textSize="20dp" />-->
 
         <TextView
             android:id="@+id/tvLokasi"

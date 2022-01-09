@@ -4,9 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class DataLogin {
 
-    @SerializedName("nik")
-    private String nik;
-
     @SerializedName("password")
     private String password;
 
@@ -33,14 +30,6 @@ public class DataLogin {
 
     @SerializedName("alamat")
     private String alamat;
-
-    public void setNik(String nik) {
-        this.nik = nik;
-    }
-
-    public String getNik() {
-        return nik;
-    }
 
     public void setPassword(String password) {
         this.password = password;

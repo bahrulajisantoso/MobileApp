@@ -1,4 +1,4 @@
-package com.example.mobileapp;
+package com.example.mobileapp.UI;
 
 
 import android.content.Intent;
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileapp.Activity.LoginActivity;
 import com.example.mobileapp.Activity.MainActivity;
+import com.example.mobileapp.R;
 
 public class SplashScreen extends AppCompatActivity {
 

@@ -34,12 +34,12 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText etNama, etEmail, etNoHp, etNik, etJeniKel, etTglLahir, etAlamat, etPassword, etKonfirmPassword;
+    private EditText etNama, etEmail, etNoHp, etJeniKel, etTglLahir, etAlamat, etPassword, etKonfirmPassword;
     private Button btnRegister;
     private ImageButton btnPilihTglLahir;
     private TextView tvLogin;
     private Spinner spinJenisKel;
-    private String nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword, kodeNegara;
+    private String nama, email, noHp, jenisKelamin, tglLahir, alamat, password, konfirmPassword, kodeNegara;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,7 +50,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         etNama = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);
         etNoHp = findViewById(R.id.etNoHp);
-//        etNik = findViewById(R.id.etNik);
 
         btnPilihTglLahir = (ImageButton) findViewById(R.id.btnPilihTglLahir);
         etTglLahir = (EditText) findViewById(R.id.etTglLahir);
@@ -83,7 +82,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         spinJenisKel = findViewById(R.id.spinJenisKel);
         final String[] jenisKel = getResources().getStringArray(R.array.jenis_kelamin);
 
-//        Spinner spinnerJenisKel = (Spinner) findViewById(R.id.spinnerJenisKel);
         spinJenisKel = (Spinner) findViewById(R.id.spinJenisKel);
 
         ArrayAdapter<CharSequence> adapterJenisKel = new ArrayAdapter<CharSequence>(RegisterActivity.this, android.R.layout.simple_spinner_item, jenisKel);
@@ -151,8 +149,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 } else if (!Patterns.PHONE.matcher(noHp).matches()) {
                     etNoHp.setError("No handphone tidak valid");
 
-                } else if (tglLahir.trim().equals("")) {
-                    etTglLahir.setError("Tanggal lahir harus diisi");
+//                } else if (tglLahir.trim().equals("")) {
+//                    etTglLahir.setError("Tanggal lahir harus diisi");
 
                 } else if (jenisKelamin.trim().equals("Pilih")) {
                     TextView errTv = (TextView) spinJenisKel.getSelectedView();
@@ -176,7 +174,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 } else if (!konfirmPassword.trim().equals(password)) {
                     etKonfirmPassword.setError("Konfirmasi password tidak sesuai");
                 } else {
-                    register(nama, email, noHp, nik, jenisKelamin, tglLahir, alamat, password, konfirmPassword);
+                    register(nama, email, noHp, jenisKelamin, tglLahir, alamat, password, konfirmPassword);
                 }
                 break;
 
@@ -189,7 +187,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     // fungsi register
-    private void register(String nama, String email, String noHp, String nik, String jenisKelamin, String tglLahir, String alamat, String password, String konfirmPassword) {
+    private void register(String nama, String email, String noHp, String jenisKelamin, String tglLahir, String alamat, String password, String konfirmPassword) {
 
         ApiInterface apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
         Call<ResponseRegister> responseRegisterCall = apiInterface.addUser(nama, email, noHp, jenisKelamin, tglLahir, alamat, password, konfirmPassword);
